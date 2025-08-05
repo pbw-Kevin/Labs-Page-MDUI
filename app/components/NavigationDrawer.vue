@@ -4,10 +4,11 @@ import '@mdui/icons/home'
 import '@mdui/icons/search'
 import '@mdui/icons/label'
 import '@mdui/icons/info'
+import { toggleNavBar } from '~/assets/main'
 </script>
 
 <template>
-  <mdui-navigation-drawer class="navigation-drawer" open="true" close-on-overlay-click>
+  <mdui-navigation-drawer class="navigation-drawer" :open="toggleNavBar" close-on-overlay-click>
     <mdui-list>
       <mdui-list-subheader>导航</mdui-list-subheader>
       <NuxtLink to="/" class="title">

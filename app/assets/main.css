@@ -3,8 +3,14 @@
 :root {
   --mdui-color-link-light: 255, 64, 129;
   --mdui-color-link-hover-light: 255, 24, 105;
+  --mdui-color-status-stable-light: 51, 241, 51;
+  --mdui-color-status-unstable-light: 255, 220, 44;
+  --mdui-color-status-unknown-light: 184, 209, 209;
   --mdui-color-link-dark: 254, 160, 201;
   --mdui-color-link-hover-dark: 238, 109, 154;
+  --mdui-color-status-stable-dark: 26, 104, 26;
+  --mdui-color-status-unstable-dark: 147, 111, 0;
+  --mdui-color-status-unknown-dark: 88, 101, 101;
 }
 
 a {

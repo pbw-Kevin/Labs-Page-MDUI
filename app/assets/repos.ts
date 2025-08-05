@@ -1,7 +1,7 @@
 var repos = [
   {
     id: "JS-SiteTime",
-    briefIntro: "基于 JavaScript的 网站运行时间显示插件",
+    briefIntro: "基于 JavaScript 的网站运行时间显示插件",
     intro: "一款基于 JavaScript 的，用于在网页中实时显示网站运行时间的小插件。\n使用指南和更多信息参见链接。",
     owner: "AIR-Kevin",
     version: "Version 1.0",
@@ -19,6 +19,7 @@ var repos = [
       {
         name: "GitHub Repository",
         url: "https://github.com/pbw-Kevin/JS-SiteTime",
+        target: "_blank"
       },
     ]
   },
@@ -40,10 +41,12 @@ var repos = [
       {
         name: "官网",
         url: "https://joyever.rth2.xyz/",
+        target: "_blank"
       },
       {
         name: "GitHub Repository",
         url: "https://github.com/pbw-Kevin/JoyEver",
+        target: "_blank"
       },
     ]
   },
@@ -65,6 +68,7 @@ var repos = [
       {
         name: "GitHub Repository",
         url: "https://github.com/pbw-Kevin/JiYu-UDP-Attack-Cpp",
+        target: "_blank"
       },
     ]
   },
@@ -90,6 +94,7 @@ var repos = [
       {
         name: "GitHub Repository",
         url: "https://github.com/pbw-Kevin/JS-SiteTime",
+        target: "_blank"
       },
     ]
   },

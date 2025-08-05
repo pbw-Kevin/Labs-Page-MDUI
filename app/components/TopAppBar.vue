@@ -7,12 +7,12 @@ import '@mdui/icons/dark-mode'
 import '@mdui/icons/dark-mode--outlined'
 import '@mdui/icons/incomplete-circle'
 
-import { realTheme, themeSwitchHover, changeTheme } from '~/assets/main'
+import { realTheme, themeSwitchHover, changeTheme, toggleNavBar } from '~/assets/main'
 </script>
 
 <template>
   <mdui-top-app-bar>
-    <mdui-button-icon>
+    <mdui-button-icon @click="toggleNavBar = !toggleNavBar">
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
     <mdui-top-app-bar-title>

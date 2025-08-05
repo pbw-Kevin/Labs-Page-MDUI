@@ -1,4 +1,4 @@
-import { getTheme, setColorScheme, setTheme } from 'mdui'
+import { breakpoint, getTheme, setColorScheme, setTheme } from 'mdui'
 import Cookies from 'js-cookie'
 
 const colorScheme = "#62DFFE"
@@ -12,6 +12,9 @@ function setThemeCssVars(theme: 'light' | 'dark') {
   const cssVars = [
     'link',
     'link-hover',
+    'status-stable',
+    'status-unstable',
+    'status-unknown',
   ]
   cssVars.forEach((cssVar) => {
     document.documentElement.style.setProperty('--mdui-color-' + cssVar, 'var(--mdui-color-' + cssVar + '-' + theme + ')')
@@ -70,3 +73,5 @@ export function changeTheme() {
     Cookies.set('theme', 'light', {expires: 30})
   }
 }
+
+export var toggleNavBar = ref(breakpoint().up('md'))
