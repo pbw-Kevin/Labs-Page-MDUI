@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+useHead({
+  title: '关于 - AIR-Kevin 的实验室',
+})
+</script>
+
 <template>
   <div class="content">
     <h1>关于本页</h1>

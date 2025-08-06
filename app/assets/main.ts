@@ -1,4 +1,4 @@
-import { breakpoint, getTheme, setColorScheme, setTheme } from 'mdui'
+import { getTheme, setColorScheme, setTheme } from 'mdui'
 import Cookies from 'js-cookie'
 
 const colorScheme = "#62DFFE"
@@ -74,4 +74,4 @@ export function changeTheme() {
   }
 }
 
-export var toggleNavBar = ref(breakpoint().up('md'))
+export var toggleNavBar = ref(false)

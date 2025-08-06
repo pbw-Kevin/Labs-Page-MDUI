@@ -1,10 +1,15 @@
 <script lang="ts" setup>
+import { breakpoint } from 'mdui'
 import 'mdui/components/navigation-drawer'
 import '@mdui/icons/home'
 import '@mdui/icons/search'
 import '@mdui/icons/label'
 import '@mdui/icons/info'
 import { toggleNavBar } from '~/assets/main'
+
+onMounted(() => {
+  toggleNavBar.value = breakpoint().up('md')
+})
 </script>
 
 <template>

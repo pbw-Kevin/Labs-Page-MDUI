@@ -9,25 +9,10 @@ import '@mdui/icons/people'
 import '@mdui/icons/access-time'
 import '@mdui/icons/label'
 import '@mdui/icons/view-list--outlined'
-import repos from '~/assets/repos'
+import { default as repos, type Repo } from '~/assets/repos'
 
 var id;
-var repo: Ref<{
-  id: string;
-  briefIntro: string;
-  intro: string;
-  owner: string;
-  version: string;
-  createdAt: string;
-  modifiedAt: string;
-  tags: string[];
-  status: string;
-  links: {
-      name: string;
-      url: string;
-      target?: string;
-  }[]
-}> = ref({
+var repo: Ref<Repo> = ref({
   id: "",
   briefIntro: "",
   intro: "",
@@ -52,6 +37,9 @@ onMounted(() => {
   var id = route.query.id;
   if(!id) router.push('/')
   else {
+    useHead({
+      title: `${id} - 项目 - AIR-Kevin 的实验室`,
+    })
     var repoGet = repos.find((tmpRepo) => {
       return tmpRepo.id == id
     })

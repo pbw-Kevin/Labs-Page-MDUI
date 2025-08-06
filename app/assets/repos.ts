@@ -1,3 +1,20 @@
+export type Repo = {
+  id: string;
+  briefIntro: string;
+  intro: string;
+  owner: string;
+  version: string;
+  createdAt: string;
+  modifiedAt: string;
+  tags: string[];
+  status: string;
+  links: {
+      name: string;
+      url: string;
+      target?: string;
+  }[]
+}
+
 var repos = [
   {
     id: "JS-SiteTime",
@@ -99,5 +116,19 @@ var repos = [
     ]
   },
 ]
+
+export var repoTags = 
+  repos.map((repo) => {
+    return repo.tags
+  }).flat().filter((tag, index, tags) => {
+    return tags.indexOf(tag) == index
+  })
+
+export var repoStatuses = 
+  repos.map((repo) => {
+    return repo.status
+  }).filter((tag, index, tags) => {
+    return tags.indexOf(tag) == index
+  })
 
 export default repos
