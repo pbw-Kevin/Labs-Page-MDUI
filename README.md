@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+# Labs-Page-MDUI
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A personal labs page, based on MDUI and Nuxt.  
+It generates static pages, which are suitable to be deployed on pure-static hosting platform.
 
-## Setup
+## Demo
+[AIR-Kevin 的实验室](https://labs.air-kevin.rf.gd/)
 
-Make sure to install dependencies:
+## Edit personal repos/projects
+Just edit file `./app/assets/repos.ts`.
 
+## Run develop/generate
+Run install first:
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm i
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+Develop:
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+Generate:
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run generate
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Then your production is in folder `./dist`.

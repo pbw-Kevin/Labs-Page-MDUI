@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import 'mdui/components/card'
 import 'mdui/components/chip'
-import '@mdui/icons/label'
-import '@mdui/icons/view-list--outlined'
 
-import { type Repo } from '~/assets/repos';
+import { type Repo } from '~/assets/repos'
+import StatusChip from './StatusChip.vue'
+import TagChip from './TagChip.vue'
 
 const prop = defineProps<{
   repo: Repo
@@ -16,19 +16,9 @@ const prop = defineProps<{
     <NuxtLink class="title card-title" :to="`/repos/${prop.repo.id}`">{{ prop.repo.id }}</NuxtLink>
     <p class="card-brief-intro">{{ prop.repo.briefIntro }}</p>
     <div>
-      <NuxtLink v-for="tag in prop.repo.tags" :to="`/tags/${tag}`">
-        <mdui-chip>
-          {{ tag }}
-          <mdui-icon-label slot="icon"></mdui-icon-label>
-        </mdui-chip>
-      </NuxtLink>
+      <TagChip v-for="tag in prop.repo.tags" :tag></TagChip>
     </div>
-    <NuxtLink :to="`/search?status=${prop.repo.status.toLowerCase()}`">
-      <mdui-chip :style="{backgroundColor: `rgb(var(--mdui-color-status-${prop.repo.status.toLowerCase()}))`}">
-        状态: {{ prop.repo.status }}
-        <mdui-icon-view-list--outlined slot="icon"></mdui-icon-view-list--outlined>
-      </mdui-chip>
-    </NuxtLink>
+    <StatusChip :status="prop.repo.status"></StatusChip>
   </mdui-card>
 </template>
 

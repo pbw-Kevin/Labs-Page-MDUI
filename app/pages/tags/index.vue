@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import '@mdui/icons/label'
-import { repoTags } from '~/assets/repos';
+import TagChip from '~/components/TagChip.vue'
+import { repoTags } from '~/assets/repos'
 
 useHead({
   title: '标签 - AIR-Kevin 的实验室',
@@ -10,12 +10,7 @@ useHead({
 <template>
   <div class="content">
     <h1>标签</h1>
-    <NuxtLink v-for="tag in repoTags" :to="`/tags/${tag}`">
-      <mdui-chip>
-        {{ tag }}
-        <mdui-icon-label slot="icon"></mdui-icon-label>
-      </mdui-chip>
-    </NuxtLink>
+    <TagChip v-for="tag in repoTags" :tag></TagChip>
   </div>
 </template>
 

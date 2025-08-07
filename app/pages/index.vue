@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import repos from '~/assets/repos';
-import RepoCard from '~/components/RepoCard.vue';
+import repos from '~/assets/repos'
+import RepoCard from '~/components/RepoCard.vue'
 
 useHead({
   title: 'AIR-Kevin 的实验室',
