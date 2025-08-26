@@ -33,9 +33,9 @@ var satisfiedRepos = computed(() => {
     <div class="search-bar">
       <mdui-text-field
         name="keyword" label="关键词" placeholder="标题、标签、作者、简介、正文……"
-        style="margin-right: -175px; padding-right: 175px;" :value="keyword" @input="keyword = $event.target.value"
+        :value="keyword" @input="keyword = $event.target.value"
       ></mdui-text-field>
-      <mdui-select name="status" label="状态" placeholder="选择状态" style="width: 150px;" :value="status" @change="status = $event.target.value">
+      <mdui-select name="status" label="状态" placeholder="选择状态" :value="status" @change="status = $event.target.value">
         <mdui-menu-item v-for="status in repoStatuses" :value="status.toLowerCase()">{{ status }}</mdui-menu-item>
         <mdui-button-icon slot="end-icon">
           <mdui-icon-keyboard-arrow-down></mdui-icon-keyboard-arrow-down>
@@ -49,5 +49,15 @@ var satisfiedRepos = computed(() => {
 <style scoped>
 .search-bar {
   margin-bottom: 10px;
+  display: flex;
+}
+
+mdui-text-field {
+  flex-grow: 1;
+  margin-right: 2px;
+}
+
+mdui-select {
+  width: 200px;
 }
 </style>

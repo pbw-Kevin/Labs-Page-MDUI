@@ -43,7 +43,7 @@ var repos = [
   {
     id: "JoyEver",
     briefIntro: "在线永乐游戏",
-    intro: "一款名叫“永乐大典”的手势游戏的在线版本\n官网和更多信息参见链接。",
+    intro: "一款名叫“永乐大典”的手势游戏的在线版本。\n官网和更多信息参见链接。",
     owner: "AIR-Kevin",
     version: "Version 1.0-alpha.1",
     createdAt: "2025-06-07",
@@ -80,7 +80,7 @@ var repos = [
       "C++",
       "UDP 重放攻击"
     ],
-    status: "Developing",
+    status: "Stable",
     links: [
       {
         name: "GitHub Repository",
@@ -110,7 +110,7 @@ var repos = [
       },
       {
         name: "GitHub Repository",
-        url: "https://github.com/pbw-Kevin/JS-SiteTime",
+        url: "https://github.com/pbw-Kevin/Labs-Page-MDUI",
         target: "_blank"
       },
     ]
