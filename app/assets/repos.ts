@@ -1,3 +1,5 @@
+import { $ } from 'mdui/jq.js';
+
 export type Repo = {
   id: string;
   briefIntro: string;
@@ -74,7 +76,7 @@ var repos = [
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-01",
-    modifiedAt: "2025-08-01",
+    modifiedAt: "2025-08-26",
     tags: [
       "极域电子教室",
       "C++",
@@ -96,7 +98,7 @@ var repos = [
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-05",
-    modifiedAt: "2025-08-05",
+    modifiedAt: "2025-08-27",
     tags: [
       "MDUI",
       "Nuxt",
@@ -118,17 +120,13 @@ var repos = [
 ]
 
 export var repoTags = 
-  repos.map((repo) => {
+  $.unique(repos.map((repo) => {
     return repo.tags
-  }).flat().filter((tag, index, tags) => {
-    return tags.indexOf(tag) == index
-  })
+  }).flat())
 
 export var repoStatuses = 
-  repos.map((repo) => {
+  $.unique(repos.map((repo) => {
     return repo.status
-  }).filter((tag, index, tags) => {
-    return tags.indexOf(tag) == index
-  })
+  }))
 
 export default repos

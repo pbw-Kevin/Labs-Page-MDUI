@@ -15,8 +15,8 @@ var status = ref('')
 
 onMounted(() => {
   var route = useRoute()
-  keyword.value = route.query.keyword as string || ''
-  status.value = route.query.status as string || ''
+  keyword.value = (route.query.keyword as string || '').toLowerCase()
+  status.value = (route.query.status as string || '').toLowerCase()
 })
 
 var satisfiedRepos = computed(() => {
