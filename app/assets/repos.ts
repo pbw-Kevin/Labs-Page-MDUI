@@ -72,11 +72,11 @@ var repos = [
   {
     id: "JiYu-UDP-Attack-Cpp",
     briefIntro: "使用 C++ 编写的，用于极域电子教室的 UDP 重放攻击工具",
-    intro: "此工具可用于在受极域电子教室控制的机房中，对已上线的其它学生机执行命令。\n使用指南和更多信息参见链接。\n注意：此工具仅供学习和研究使用，请勿用于非法用途。\n受到了 ht0Ruial/jiyu_udp_attack 的启发。",
+    intro: "此工具可用于在受极域电子教室控制的机房中，对已上线的其它学生机执行命令。\n使用指南和更多信息参见链接。\n注意：此工具仅供学习和研究使用，请勿用于非法用途。\n受到了 <a href=\"https://github.com/ht0Ruial/Jiyu_udp_attack\" target=\"_blank\">ht0Ruial/Jiyu_udp_attack</a> 的启发。",
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-01",
-    modifiedAt: "2025-08-26",
+    modifiedAt: "2025-09-20",
     tags: [
       "极域电子教室",
       "C++",
@@ -98,7 +98,7 @@ var repos = [
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-05",
-    modifiedAt: "2025-08-27",
+    modifiedAt: "2025-09-24",
     tags: [
       "MDUI",
       "Nuxt",

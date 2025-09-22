@@ -24,21 +24,13 @@ a:hover {
   text-decoration: underline;
 }
 
-a.top-title {
-  margin: 0 4px;
-}
-
 a.title {
-  color: rgb(var(--mdui-color-text));
+  color: rgb(var(--mdui-color-on-background));
 }
 
 a.title:hover {
-  color: rgb(var(--mdui-color-text));
+  color: rgb(var(--mdui-color-on-background));
 	text-decoration: none;
-}
-
-.small-title {
-  font-size: 16px;
 }
 
 .content {
@@ -47,4 +39,8 @@ a.title:hover {
 
 p {
   line-height: 160%;
+}
+
+mdui-chip {
+  margin: 0 4px;
 }

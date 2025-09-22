@@ -12,7 +12,6 @@ import { default as repos, type Repo } from '~/assets/repos'
 import StatusChip from '~/components/StatusChip.vue'
 import TagChip from '~/components/TagChip.vue'
 
-var id;
 var repo: Ref<Repo> = ref({
   id: "",
   briefIntro: "",
@@ -108,10 +107,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-mdui-chip {
-  margin: 0 4px;
-}
-
 .info-collapse-content {
   margin: 10px 40px;
 }

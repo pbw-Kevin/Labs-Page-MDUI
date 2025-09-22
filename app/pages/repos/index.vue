@@ -2,6 +2,7 @@
 import { useRoute, useRouter } from 'vue-router'
 import 'mdui/components/list'
 import 'mdui/components/collapse'
+import 'mdui/components/chip'
 import '@mdui/icons/info'
 import '@mdui/icons/link'
 import '@mdui/icons/keyboard-arrow-down'
@@ -11,7 +12,6 @@ import { default as repos, type Repo } from '~/assets/repos'
 import StatusChip from '~/components/StatusChip.vue'
 import TagChip from '~/components/TagChip.vue'
 
-var id;
 var repo: Ref<Repo> = ref({
   id: "",
   briefIntro: "",
@@ -107,10 +107,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-mdui-chip {
-  margin: 0 4px;
-}
-
 .info-collapse-content {
   margin: 10px 40px;
 }

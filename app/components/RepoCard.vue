@@ -24,17 +24,12 @@ const prop = defineProps<{
 
 <style scoped>
 mdui-card {
-	width: 440px;
 	height: 160px;
   overflow: overlay;
 	padding: 10px;
 	margin: 5px;
 	box-shadow: var(--mdui-elevation-level2);
 	background-color: rgb(var(--mdui-color-surface-container-low));
-}
-
-mdui-chip {
-  margin: 0 4px;
 }
 
 .card-title {

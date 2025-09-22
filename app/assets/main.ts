@@ -1,4 +1,4 @@
-import { getTheme, setColorScheme, setTheme } from 'mdui'
+import { getTheme, setColorScheme, setTheme, observeResize } from 'mdui'
 import Cookies from 'js-cookie'
 
 const colorScheme = "#62DFFE"
@@ -7,6 +7,8 @@ const theme = 'auto'
 export var realTheme = ref('' as 'light' | 'dark')
 export var themeSwitchHover = ref(false)
 var themeMedia: MediaQueryList;
+
+export var isSmallDevice = ref(false)
 
 function setThemeCssVars(theme: 'light' | 'dark') {
   const cssVars = [
@@ -22,6 +24,10 @@ function setThemeCssVars(theme: 'light' | 'dark') {
 }
 
 export function init() {
+  isSmallDevice.value = window.innerWidth < 470
+  observeResize(document.body, function (entry, observer) {
+    isSmallDevice.value = ( entry.borderBoxSize[0]?.inlineSize || 1000 ) < 470
+  })
   setColorScheme(colorScheme)
   setTheme(theme)
   themeMedia = window.matchMedia("(prefers-color-scheme: dark)");

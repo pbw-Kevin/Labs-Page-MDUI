@@ -7,18 +7,18 @@ import '@mdui/icons/dark-mode'
 import '@mdui/icons/dark-mode--outlined'
 import '@mdui/icons/incomplete-circle'
 
-import { realTheme, themeSwitchHover, changeTheme, toggleNavBar } from '~/assets/main'
+import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice } from '~/assets/main'
 </script>
 
 <template>
-  <mdui-top-app-bar>
+  <mdui-top-app-bar :variant="isSmallDevice ? 'medium' : 'small'">
     <mdui-button-icon @click="toggleNavBar = !toggleNavBar">
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
     <mdui-top-app-bar-title>
-      <NuxtLink to="/" class="title top-title">AIR-Kevin 的实验室</NuxtLink>
-      <a class="title top-title small-title" href="//air-kevin.rf.gd/">返回主页</a>
-      <a class="title top-title small-title" href="//blog.air-kevin.rf.gd">返回博客</a>
+      <NuxtLink to="/" style="color: rgb(var(--mdui-color-on-background)); text-decoration: none;">AIR-Kevin 的实验室</NuxtLink>
+      <a style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;" href="//air-kevin.rf.gd/">返回主页</a>
+      <a style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;" href="//blog.air-kevin.rf.gd">返回博客</a>
     </mdui-top-app-bar-title>
     <mdui-button-icon @click="changeTheme()" @mouseover="themeSwitchHover = true" @mouseleave="themeSwitchHover = false">
       <mdui-icon-light-mode--outlined v-if="realTheme == 'light' && !themeSwitchHover"></mdui-icon-light-mode--outlined>

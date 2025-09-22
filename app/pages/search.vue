@@ -4,7 +4,7 @@ import 'mdui/components/select'
 import 'mdui/components/button-icon'
 import '@mdui/icons/keyboard-arrow-down'
 import { default as repos, repoStatuses } from '~/assets/repos'
-import RepoCard from '~/components/RepoCard.vue'
+import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
   title: '搜索 - AIR-Kevin 的实验室',
@@ -42,7 +42,7 @@ var satisfiedRepos = computed(() => {
         </mdui-button-icon>
       </mdui-select>
     </div>
-    <RepoCard v-for="repo in satisfiedRepos" :repo />
+    <RepoCardGroup :repos="satisfiedRepos"></RepoCardGroup>
   </div>
 </template>
 

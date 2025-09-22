@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import repos from '~/assets/repos'
-import RepoCard from '~/components/RepoCard.vue';
+import RepoCardGroup from '~/components/RepoCardGroup.vue';
 
 var id = ref('');
 
@@ -16,6 +16,6 @@ onMounted(() => {
 <template>
   <div class="content">
     <h1>标签：{{ id }}</h1>
-    <RepoCard v-for="repo in repos.filter((repo) => {return repo.tags.includes(id)})" :repo />
+    <RepoCardGroup :repos="repos.filter((repo) => {return repo.tags.includes(id)})" />
   </div>
 </template>

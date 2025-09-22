@@ -15,9 +15,3 @@ defineProps<{
     </mdui-chip>
   </NuxtLink>
 </template>
-
-<style>
-mdui-chip {
-  margin: 0 4px;
-}
-</style>

@@ -13,9 +13,3 @@ useHead({
     <TagChip v-for="tag in repoTags" :tag></TagChip>
   </div>
 </template>
-
-<style scoped>
-mdui-chip {
-  margin: 0 4px;
-}
-</style>
