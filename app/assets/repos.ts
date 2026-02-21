@@ -23,9 +23,9 @@ var repos = [
     briefIntro: "基于 JavaScript 的网站运行时间显示插件",
     intro: "一款基于 JavaScript 的，用于在网页中实时显示网站运行时间的小插件。\n使用指南和更多信息参见链接。",
     owner: "AIR-Kevin",
-    version: "Version 1.0",
+    version: "Version 2.0",
     createdAt: "2024-06-29 11:58:27",
-    modifiedAt: "2024-06-29 11:58:27",
+    modifiedAt: "2026-02-10 20:15:46",
     tags: [
       "JavaScript"
     ],
@@ -76,7 +76,7 @@ var repos = [
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-01",
-    modifiedAt: "2025-09-20",
+    modifiedAt: "2026-02-21",
     tags: [
       "极域电子教室",
       "C++",
@@ -98,7 +98,7 @@ var repos = [
     owner: "AIR-Kevin",
     version: "Version 1.0",
     createdAt: "2025-08-05",
-    modifiedAt: "2025-09-24",
+    modifiedAt: "2026-02-21",
     tags: [
       "MDUI",
       "Nuxt",
