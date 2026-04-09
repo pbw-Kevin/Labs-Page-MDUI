@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import { config } from '~/assets/config'
 import TagChip from '~/components/TagChip.vue'
 import { repoTags } from '~/assets/repos'
 
 useHead({
-  title: '标签 - AIR-Kevin 的实验室',
+  title: '标签 - ' + config.title,
 })
 </script>
 

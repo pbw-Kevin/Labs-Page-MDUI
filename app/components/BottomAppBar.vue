@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-import 'mdui/components/bottom-app-bar'
+import { config } from '~/assets/config';
 </script>
 
 <template>
   <mdui-bottom-app-bar>
-    <p>
-      &copy; 2026 <a href="//air-kevin.rf.gd">AIR-Kevin</a><br>
-      <a href="https://github.com/pbw-Kevin/Labs-Page-MDUI" target="_blank">GitHub Repository</a>
-    </p>
+    <div v-html="config.bottom"></div>
   </mdui-bottom-app-bar>
 </template>

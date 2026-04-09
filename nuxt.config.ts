@@ -7,8 +7,9 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('mdui-')
-    }
+    },
   },
+  ssr: false,
   nitro: {
     prerender: {
       routes: repos
@@ -16,6 +17,23 @@ export default defineNuxtConfig({
         .concat(repoTags.map((tag) => {
           return `/tags/${tag}`
         })),
+    }
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://unpkg.com/mdui@2/mdui.css',
+        }
+      ],
+      script: [
+        {
+          src: 'https://unpkg.com/mdui@2/mdui.global.js',
+          onerror: 'window.mduiLoadError = true;',
+          async: true,
+        }
+      ]
     }
   }
 })

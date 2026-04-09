@@ -1,42 +1,36 @@
 <script lang="ts" setup>
-import { breakpoint } from 'mdui'
-import 'mdui/components/navigation-drawer'
 import '@mdui/icons/home'
 import '@mdui/icons/search'
 import '@mdui/icons/label'
 import '@mdui/icons/info'
-import { toggleNavBar } from '~/assets/main'
-
-onMounted(() => {
-  toggleNavBar.value = breakpoint().up('md')
-})
+import { toggleNavBar, autoToggleNavBar } from '~/assets/main'
 </script>
 
 <template>
   <mdui-navigation-drawer class="navigation-drawer" :open="toggleNavBar" close-on-overlay-click>
     <mdui-list>
       <mdui-list-subheader>导航</mdui-list-subheader>
-      <NuxtLink to="/" class="title">
+      <NuxtLink to="/" class="title" @click="autoToggleNavBar()">
         <mdui-list-item rounded>
           返回首页
           <mdui-icon-home slot="icon"></mdui-icon-home>
         </mdui-list-item>
       </NuxtLink>
-      <NuxtLink to="/search" class="title">
+      <NuxtLink to="/search" class="title" @click="autoToggleNavBar()">
         <mdui-list-item rounded>
           搜索项目
           <mdui-icon-search slot="icon"></mdui-icon-search>
         </mdui-list-item>
       </NuxtLink>
-      <NuxtLink to="/tags" class="title">
+      <NuxtLink to="/tags" class="title" @click="autoToggleNavBar()">
         <mdui-list-item rounded>
           标签
           <mdui-icon-label slot="icon"></mdui-icon-label>
         </mdui-list-item>
       </NuxtLink>
-      <NuxtLink to="/about" class="title">
+      <NuxtLink to="/about" class="title" @click="autoToggleNavBar()">
         <mdui-list-item rounded>
-          关于本页
+          关于
           <mdui-icon-info slot="icon"></mdui-icon-info>
         </mdui-list-item>
       </NuxtLink>

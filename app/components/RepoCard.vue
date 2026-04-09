@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import 'mdui/components/card'
-import 'mdui/components/chip'
-
-import { type Repo } from '~/assets/repos'
+import type { Repo } from '~/assets/main'
 import StatusChip from './StatusChip.vue'
 import TagChip from './TagChip.vue'
 
@@ -24,7 +21,6 @@ const prop = defineProps<{
 
 <style scoped>
 mdui-card {
-	height: 160px;
   overflow: overlay;
 	padding: 10px;
 	margin: 5px;

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { config } from '~/assets/config'
 import repos from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue';
 
@@ -8,7 +9,7 @@ onMounted(() => {
   var route = useRoute()
   id.value = route.params.id as string
   useHead({
-    title: `${id.value} - 标签 - AIR-Kevin 的实验室`,
+    title: `标签：${id.value} - ${config.title}`,
   })
 })
 </script>

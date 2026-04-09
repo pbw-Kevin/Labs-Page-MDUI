@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import { config } from '~/assets/config'
 import repos from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
-  title: 'AIR-Kevin 的实验室',
+  title: config.title,
 })
 </script>
 

@@ -1,5 +1,3 @@
-@import url('~~/node_modules/mdui/mdui.css');
-
 :root {
   --mdui-color-shadow-dark: 200, 200, 200 !important;
   --mdui-color-link-light: 255, 64, 129;

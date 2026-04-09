@@ -4,10 +4,10 @@ A personal labs page, based on MDUI and Nuxt.
 It generates static pages, which are suitable to be deployed on pure-static hosting platform.
 
 ## Demo
-[AIR-Kevin 的实验室](https://labs.air-kevin.rf.gd/)
+[AIR-Kevin 的实验室](https://labs.air-kevin.rf.gd)
 
 ## Edit personal repos/projects
-Just edit file `./app/assets/repos.ts`.
+Just edit file `app/assets/config.ts`.
 
 ## Run develop/generate
 Run install first:

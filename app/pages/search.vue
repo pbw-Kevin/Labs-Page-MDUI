@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import 'mdui/components/text-field'
-import 'mdui/components/select'
-import 'mdui/components/button-icon'
+import { config } from '~/assets/config'
 import '@mdui/icons/keyboard-arrow-down'
 import { default as repos, repoStatuses } from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
-  title: '搜索 - AIR-Kevin 的实验室',
+  title: '搜索 - ' + config.title,
 })
 
 var keyword = ref('')

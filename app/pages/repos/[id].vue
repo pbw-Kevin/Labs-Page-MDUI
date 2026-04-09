@@ -1,35 +1,16 @@
 <script lang="ts" setup>
+import { config } from '~/assets/config'
 import { useRoute, useRouter } from 'vue-router'
-import 'mdui/components/list'
-import 'mdui/components/collapse'
-import 'mdui/components/chip'
 import '@mdui/icons/info'
 import '@mdui/icons/link'
 import '@mdui/icons/keyboard-arrow-down'
 import '@mdui/icons/people'
 import '@mdui/icons/access-time'
-import { default as repos, type Repo } from '~/assets/repos'
+import { default as repos, emptyRepo } from '~/assets/repos'
 import StatusChip from '~/components/StatusChip.vue'
 import TagChip from '~/components/TagChip.vue'
 
-var repo: Ref<Repo> = ref({
-  id: "",
-  briefIntro: "",
-  intro: "",
-  owner: "",
-  version: "",
-  createdAt: "",
-  modifiedAt: "",
-  tags: [""],
-  status: "",
-  links: [
-    {
-      name: "",
-      url: "",
-      target: ""
-    },
-  ]
-})
+var repo = ref(emptyRepo)
 
 onMounted(() => {
   var route = useRoute()
@@ -38,7 +19,7 @@ onMounted(() => {
   if(!id) router.push('/')
   else {
     useHead({
-      title: `${id} - 项目 - AIR-Kevin 的实验室`,
+      title: `项目：${id} - ${config.title}`,
     })
     var repoGet = repos.find((tmpRepo) => {
       return tmpRepo.id == id

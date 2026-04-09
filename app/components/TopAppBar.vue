@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import 'mdui/components/top-app-bar'
+import { config } from '~/assets/config'
 import '@mdui/icons/menu'
 import '@mdui/icons/light-mode'
 import '@mdui/icons/light-mode--outlined'
@@ -16,9 +16,12 @@ import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice }
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
     <mdui-top-app-bar-title>
-      <NuxtLink to="/" style="color: rgb(var(--mdui-color-on-background)); text-decoration: none;">AIR-Kevin 的实验室</NuxtLink>
-      <a style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;" href="//air-kevin.rf.gd/">返回主页</a>
-      <a style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;" href="//blog.air-kevin.rf.gd">返回博客</a>
+      <NuxtLink to="/" style="color: rgb(var(--mdui-color-on-background)); text-decoration: none;">{{ config.title }}</NuxtLink>
+      <a
+        style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;"
+        :href="item.href"
+        v-for="(item, index) in config.subtitles" :key="index"
+      >{{ item.text }}</a>
     </mdui-top-app-bar-title>
     <mdui-button-icon @click="changeTheme()" @mouseover="themeSwitchHover = true" @mouseleave="themeSwitchHover = false">
       <mdui-icon-light-mode--outlined v-if="realTheme == 'light' && !themeSwitchHover"></mdui-icon-light-mode--outlined>
