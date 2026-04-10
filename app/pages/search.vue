@@ -13,15 +13,35 @@ var status = ref('')
 
 onMounted(() => {
   var route = useRoute()
-  keyword.value = (route.query.keyword as string || '').toLowerCase()
-  status.value = (route.query.status as string || '').toLowerCase()
+  keyword.value = (typeof route.query.keyword === 'string' ? route.query.keyword : '').toLowerCase()
+  status.value = (typeof route.query.status === 'string' ? route.query.status : '').toLowerCase()
+})
+
+const processedRepos = repos.map((repo) => {
+  return (function processRepo(rp: any): string[] {
+    if (typeof rp === 'string') {
+      return [rp.toLowerCase()]
+    } else if (Array.isArray(rp)) {
+      return rp.flatMap(processRepo)
+    } else if (typeof rp === 'object' && rp !== null) {
+      return Object.values(rp).flatMap(processRepo)
+    } else {
+      return []
+    }
+  })(repo)
 })
 
 var satisfiedRepos = computed(() => {
-  return repos.filter((repo) => {
-    return (!keyword.value || JSON.stringify(repo).toLowerCase().includes(keyword.value.toLowerCase())) &&
-      (!status.value || repo.status.toLowerCase() == status.value)
-  })
+  var processedKeywords = keyword.value.split(" ").map(k => k.trim().toLowerCase()).filter(k => k !== "")
+  return processedRepos.reduce((acc: typeof repos, repo, index) => {
+    if (
+      processedKeywords.every((k) => repo.some((r) => r.includes(k))) &&
+      (status.value === '' || repos[index]?.status.toLowerCase() === status.value.toLowerCase())
+    ) {
+      acc.push(repos[index] as any)
+    }
+    return acc
+  }, [] as typeof repos)
 })
 </script>
 

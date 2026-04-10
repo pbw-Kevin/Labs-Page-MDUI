@@ -10,80 +10,90 @@ import { default as repos, emptyRepo } from '~/assets/repos'
 import StatusChip from '~/components/StatusChip.vue'
 import TagChip from '~/components/TagChip.vue'
 
-var repo = ref(emptyRepo)
+var id = ref('')
+
+var repo = computed(() => {
+  return repos.find((tmpRepo) => {
+    return tmpRepo.id == id.value
+  }) || emptyRepo
+})
 
 onMounted(() => {
   var route = useRoute()
   var router = useRouter()
-  var id = route.params.id;
-  if(!id) router.push('/')
+  if (typeof route.params.id !== 'string') router.push('/')
   else {
+    id.value = route.params.id;
     useHead({
-      title: `项目：${id} - ${config.title}`,
+      title: `项目：${id.value} - ${config.title}`,
     })
-    var repoGet = repos.find((tmpRepo) => {
-      return tmpRepo.id == id
-    })
-    if(repoGet) repo.value = repoGet
   }
 })
 </script>
 
 <template>
   <div class="content">
-    <h1>项目：{{ repo.id }}</h1>
-    <p>{{ repo.briefIntro }}</p>
-    <mdui-list>
-      <mdui-collapse accordion>
-        <mdui-collapse-item>
-          <mdui-list-item slot="header" rounded>
-            <mdui-icon-info slot="icon"></mdui-icon-info>
-            Tags
-            <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
-          </mdui-list-item>
-          <div class="info-collapse-content">
-            <div>
-              <mdui-chip>
-                {{ repo.owner }}
-                <mdui-icon-people slot="icon"></mdui-icon-people>
-              </mdui-chip>
-              <mdui-chip>
-                {{ repo.version }}
-              </mdui-chip>
+    <h1>项目：{{ id }}</h1>
+    <div v-if="repo.id">
+      <p>{{ repo.briefIntro }}</p>
+      <mdui-list>
+        <mdui-collapse accordion>
+          <mdui-collapse-item>
+            <mdui-list-item slot="header" rounded>
+              <mdui-icon-info slot="icon"></mdui-icon-info>
+              Tags
+              <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
+            </mdui-list-item>
+            <div class="info-collapse-content">
+              <div>
+                <mdui-chip>
+                  {{ repo.owner }}
+                  <mdui-icon-people slot="icon"></mdui-icon-people>
+                </mdui-chip>
+                <mdui-chip>
+                  {{ repo.version }}
+                </mdui-chip>
+              </div>
+              <div>
+                <mdui-chip>
+                  Created at {{ repo.createdAt }}
+                  <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
+                </mdui-chip>
+                <mdui-chip>
+                  Modified at {{ repo.modifiedAt }}
+                  <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
+                </mdui-chip>
+              </div>
+              <div>
+                <TagChip v-for="tag in repo.tags" :tag></TagChip>
+              </div>
+              <div>
+                <StatusChip :status="repo.status"></StatusChip>
+              </div>
             </div>
-            <div>
-              <mdui-chip>
-                Created at {{ repo.createdAt }}
-                <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
-              </mdui-chip>
-              <mdui-chip>
-                Modified at {{ repo.modifiedAt }}
-                <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
-              </mdui-chip>
+          </mdui-collapse-item>
+          <p v-html="repo.intro.replaceAll('\n', '<br />')"></p>
+          <mdui-collapse-item>
+            <mdui-list-item slot="header" rounded>
+              <mdui-icon-link slot="icon"></mdui-icon-link>
+              Links
+              <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
+            </mdui-list-item>
+            <div class="info-collapse-content">
+              <div v-for="link in repo.links">
+                <a :href="link.url" :target="link?.target">{{ link.name }}</a>
+              </div>
             </div>
-            <div>
-              <TagChip v-for="tag in repo.tags" :tag></TagChip>
-            </div>
-            <div>
-              <StatusChip :status="repo.status"></StatusChip>
-            </div>
-          </div>
-        </mdui-collapse-item>
-        <p v-html="repo.intro.replaceAll('\n', '<br />')"></p>
-        <mdui-collapse-item>
-          <mdui-list-item slot="header" rounded>
-            <mdui-icon-link slot="icon"></mdui-icon-link>
-            Links
-            <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
-          </mdui-list-item>
-          <div class="info-collapse-content">
-            <div v-for="link in repo.links">
-              <a :href="link.url" :target="link?.target">{{ link.name }}</a>
-            </div>
-          </div>
-        </mdui-collapse-item>
-      </mdui-collapse>
-    </mdui-list>
+          </mdui-collapse-item>
+        </mdui-collapse>
+      </mdui-list>
+    </div>
+    <div v-else>
+      <p>
+        项目不存在<br />
+        <NuxtLink to="/">返回首页</NuxtLink>
+      </p>
+    </div>
   </div>
 </template>
 
