@@ -9,7 +9,6 @@ export default defineNuxtConfig({
       isCustomElement: tag => tag.startsWith('mdui-')
     },
   },
-  ssr: false,
   nitro: {
     prerender: {
       routes: repos
