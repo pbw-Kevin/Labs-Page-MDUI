@@ -1,14 +1,26 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { default as repos, repoTags } from './app/assets/repos'
+import { config } from './app/assets/config'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+
+  site: {
+    url: config.url,
+    name: config.title
+  },
+
+  sitemap: {
+    zeroRuntime: true
+  },
+
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('mdui-')
     },
   },
+
   nitro: {
     prerender: {
       routes: repos
@@ -18,6 +30,7 @@ export default defineNuxtConfig({
         })),
     }
   },
+
   app: {
     head: {
       link: [
@@ -34,5 +47,7 @@ export default defineNuxtConfig({
         }
       ]
     }
-  }
+  },
+
+  modules: ['@nuxtjs/sitemap']
 })

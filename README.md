@@ -8,6 +8,7 @@ It generates static pages, which are suitable to be deployed on pure-static host
 
 ## Edit personal repos/projects
 Just edit file `app/assets/config.ts`.
+Change files in `public` folder if necessary.
 
 ## Run develop/generate
 Run install first:

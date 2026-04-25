@@ -1,2 +1,3 @@
 User-Agent: *
+Sitemap: https://labs.air-kevin.rf.gd/sitemap.xml
 Disallow:

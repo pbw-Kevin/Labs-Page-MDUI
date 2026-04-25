@@ -3,6 +3,7 @@ import type { Config } from './main'
 export const config : Config = {
   colorScheme: "#62DFFE",
   theme: "auto",
+  url: "https://labs.air-kevin.rf.gd",
   title: "AIR-Kevin 的实验室",
   subtitles: [
     {

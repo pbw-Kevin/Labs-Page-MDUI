@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "@mdui/icons": "^1.0.3",
+    "@nuxtjs/sitemap": "^8.0.13",
     "@types/js-cookie": "^3.0.6",
+    "h3": "1.15.6",
     "js-cookie": "^3.0.5",
-    "nuxt": "^4.0.2",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "nitropack": "2.13.1",
+    "nuxt": "^4.4.2"
   }
 }

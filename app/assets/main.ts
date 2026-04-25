@@ -136,6 +136,7 @@ export type Repo = {
 export type Config = {
   colorScheme: string
   theme: 'light' | 'dark' | 'auto'
+  url: string
   title: string
   subtitles: {
     text: string
