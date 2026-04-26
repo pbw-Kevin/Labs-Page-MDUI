@@ -2,7 +2,7 @@ import config from './config'
 import type { Repo } from './main'
 
 const unique = (arr: Array<string>) => {
-    return [...new Set(arr)];
+    return [...new Set(arr)]
 }
 
 export const emptyRepo : Repo = {
@@ -20,7 +20,7 @@ export const emptyRepo : Repo = {
       name: "",
       url: "",
       target: ""
-    },
+    }
   ]
 }
 

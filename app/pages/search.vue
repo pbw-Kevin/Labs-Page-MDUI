@@ -5,7 +5,7 @@ import { default as repos, repoStatuses } from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
-  title: `搜索${config.titleDelimiter}${config.title}`,
+  title: `搜索${config.titleDelimiter}${config.title}`
 })
 
 var keyword = ref('')

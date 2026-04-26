@@ -1,7 +1,7 @@
 declare global {
   interface Window {
-    mdui: any;
-    mduiLoadError: boolean;
+    mdui: any
+    mduiLoadError: boolean
   }
 }
 
@@ -17,7 +17,7 @@ const theme = config.theme
 
 export var realTheme = ref('' as 'light' | 'dark')
 export var themeSwitchHover = ref(false)
-var themeMedia: MediaQueryList;
+var themeMedia: MediaQueryList
 
 export var isSmallDevice = ref(false)
 
@@ -27,11 +27,11 @@ function setThemeCssVars(theme: 'light' | 'dark') {
     'link-hover',
     'status-stable',
     'status-unstable',
-    'status-unknown',
+    'status-unknown'
   ]
   cssVars.forEach((cssVar) => {
     document.documentElement.style.setProperty('--mdui-color-' + cssVar, 'var(--mdui-color-' + cssVar + '-' + theme + ')')
-  });
+  })
 }
 
 export async function init() {
@@ -58,7 +58,7 @@ export async function init() {
   })
   mdui.setColorScheme(colorScheme)
   mdui.setTheme(theme)
-  themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+  themeMedia = window.matchMedia("(prefers-color-scheme: dark)")
   themeMedia.addEventListener("change", (event) => {
     if(mdui.getTheme() == 'auto'){
       if (event.matches) {
@@ -69,8 +69,8 @@ export async function init() {
         setThemeCssVars('light')
       }
     }
-  });
-  var cookieTheme = Cookies.get('theme');
+  })
+  var cookieTheme = Cookies.get('theme')
   if(cookieTheme) {
     if(cookieTheme == 'dark') {
       mdui.setTheme('dark')
@@ -117,19 +117,19 @@ export function autoToggleNavBar() {
 }
 
 export type Repo = {
-  id: string;
-  briefIntro: string;
-  intro: string;
-  owner: string;
-  version: string;
-  createdAt: string;
-  modifiedAt: string;
-  tags: string[];
-  status: string;
+  id: string
+  briefIntro: string
+  intro: string
+  owner: string
+  version: string
+  createdAt: string
+  modifiedAt: string
+  tags: string[]
+  status: string
   links: {
-      name: string;
-      url: string;
-      target?: string;
+      name: string
+      url: string
+      target?: string
   }[]
 }
 

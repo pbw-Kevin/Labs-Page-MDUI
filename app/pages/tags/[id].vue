@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import config from '~/assets/config'
 import { default as allRepos } from '~/assets/repos'
-import RepoCardGroup from '~/components/RepoCardGroup.vue';
+import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
-var id = ref('');
+var id = ref('')
 
 var repos = computed(() => {
   return allRepos.filter((repo) => {
@@ -17,7 +17,7 @@ onMounted(() => {
     id.value = route.params.id
   }
   useHead({
-    title: `标签：${id.value}${config.titleDelimiter}${config.title}`,
+    title: `标签：${id.value}${config.titleDelimiter}${config.title}`
   })
 })
 </script>

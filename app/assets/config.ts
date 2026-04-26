@@ -9,12 +9,12 @@ const config : Config = {
   subtitles: [
     {
       text: "返回主页",
-      href: "//air-kevin.rf.gd",
+      href: "//air-kevin.rf.gd"
     },
     {
       text: "返回博客",
-      href: "//blog.air-kevin.rf.gd",
-    },
+      href: "//blog.air-kevin.rf.gd"
+    }
   ],
   repos: [
     {
@@ -32,13 +32,13 @@ const config : Config = {
       links: [
         {
           name: "博客文章",
-          url: "https://blog.air-kevin.rf.gd/2024/JS-SiteTime",
+          url: "https://blog.air-kevin.rf.gd/2024/JS-SiteTime"
         },
         {
           name: "GitHub Repository",
           url: "https://github.com/pbw-Kevin/JS-SiteTime",
           target: "_blank"
-        },
+        }
       ]
     },
     {
@@ -52,7 +52,7 @@ const config : Config = {
       tags: [
         "游戏",
         "Vue",
-        "MDUI",
+        "MDUI"
       ],
       status: "Unstable",
       links: [
@@ -65,7 +65,7 @@ const config : Config = {
           name: "GitHub Repository",
           url: "https://github.com/pbw-Kevin/JoyEver",
           target: "_blank"
-        },
+        }
       ]
     },
     {
@@ -87,7 +87,7 @@ const config : Config = {
           name: "GitHub Repository",
           url: "https://github.com/pbw-Kevin/JiYu-UDP-Attack-Cpp",
           target: "_blank"
-        },
+        }
       ]
     },
     {
@@ -107,13 +107,13 @@ const config : Config = {
       links: [
         {
           name: "在线预览",
-          url: "https://labs.air-kevin.rf.gd/",
+          url: "https://labs.air-kevin.rf.gd/"
         },
         {
           name: "GitHub Repository",
           url: "https://github.com/pbw-Kevin/Labs-Page-MDUI",
           target: "_blank"
-        },
+        }
       ]
     },
     {
@@ -154,7 +154,7 @@ const config : Config = {
       links: [
         {
           name: "在线游玩（博客）",
-          url: "https://blog.air-kevin.rf.gd/2026/yet-another-maze",
+          url: "https://blog.air-kevin.rf.gd/2026/yet-another-maze"
         },
         {
           name: "GitHub Repository",

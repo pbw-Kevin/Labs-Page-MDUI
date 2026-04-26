@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('mdui-')
-    },
+    }
   },
 
   nitro: {
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         .map(repo => {return `/repos/${repo.id}`})
         .concat(repoTags.map((tag) => {
           return `/tags/${tag}`
-        })),
+        }))
     }
   },
 
@@ -36,14 +36,14 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/mdui@2/mdui.css',
+          href: 'https://unpkg.com/mdui@2/mdui.css'
         }
       ],
       script: [
         {
           src: 'https://unpkg.com/mdui@2/mdui.global.js',
           onerror: 'window.mduiLoadError = true;',
-          async: true,
+          async: true
         }
       ]
     }

@@ -4,7 +4,7 @@ import repos from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
-  title: config.title,
+  title: config.title
 })
 </script>
 
