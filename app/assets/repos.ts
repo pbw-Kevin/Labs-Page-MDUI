@@ -1,4 +1,4 @@
-import { config } from './config'
+import config from './config'
 import type { Repo } from './main'
 
 const unique = (arr: Array<string>) => {

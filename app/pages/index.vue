@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 import repos from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 

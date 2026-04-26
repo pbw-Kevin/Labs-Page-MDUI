@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 import '@mdui/icons/menu'
 import '@mdui/icons/light-mode'
 import '@mdui/icons/light-mode--outlined'

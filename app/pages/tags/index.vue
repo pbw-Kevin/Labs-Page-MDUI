@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 import TagChip from '~/components/TagChip.vue'
 import { repoTags } from '~/assets/repos'
 
 useHead({
-  title: '标签 - ' + config.title,
+  title: `标签${config.titleDelimiter}${config.title}`,
 })
 </script>
 

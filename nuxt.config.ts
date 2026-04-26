@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { default as repos, repoTags } from './app/assets/repos'
-import { config } from './app/assets/config'
+import config from './app/assets/config'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',

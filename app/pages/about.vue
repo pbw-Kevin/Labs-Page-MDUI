@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 
 useHead({
-  title: '关于 - ' + config.title,
+  title: `关于${config.titleDelimiter}${config.title}`,
 })
 </script>
 

@@ -7,7 +7,7 @@ declare global {
 
 var mdui: any = null
 import Cookies from 'js-cookie'
-import { config } from './config'
+import config from './config'
 
 export var labLoaded = ref(false)
 export var labError = ref(false)
@@ -138,6 +138,7 @@ export type Config = {
   theme: 'light' | 'dark' | 'auto'
   url: string
   title: string
+  titleDelimiter: string
   subtitles: {
     text: string
     href: string

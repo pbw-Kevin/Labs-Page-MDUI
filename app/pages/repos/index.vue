@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 import { useRoute, useRouter } from 'vue-router'
 import '@mdui/icons/info'
 import '@mdui/icons/link'
@@ -25,7 +25,7 @@ onMounted(() => {
   else {
     id.value = route.query.id;
     useHead({
-      title: `项目：${id.value} - ${config.title}`,
+      title: `项目：${id.value}${config.titleDelimiter}${config.title}`,
     })
   }
 })

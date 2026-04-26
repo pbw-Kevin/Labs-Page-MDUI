@@ -1,10 +1,11 @@
 import type { Config } from './main'
 
-export const config : Config = {
+const config : Config = {
   colorScheme: "#62DFFE",
   theme: "auto",
   url: "https://labs.air-kevin.rf.gd",
   title: "AIR-Kevin 的实验室",
+  titleDelimiter: " - ",
   subtitles: [
     {
       text: "返回主页",
@@ -96,7 +97,7 @@ export const config : Config = {
       owner: "AIR-Kevin",
       version: "v0.1.0",
       createdAt: "2025-08-05",
-      modifiedAt: "2026-04-10",
+      modifiedAt: "2026-04-26",
       tags: [
         "MDUI",
         "Nuxt",
@@ -166,3 +167,5 @@ export const config : Config = {
   about: "<p>由 <a href=\"https://air-kevin.rf.gd/\">AIR-Kevin</a> 制作。<br />基于 <a href=\"https://mdui.org/\" target=\"_blank\">MDUI</a> 和 <a href=\"https://nuxt.com/\" target=\"_blank\">Nuxt</a> 开发。<br />使用深色模式效果更佳！</p>",
   bottom: "<p>&copy; 2026 <a href=\"//air-kevin.rf.gd\">AIR-Kevin</a><br /><a href=\"https://github.com/pbw-Kevin/Labs-Page-MDUI\" target=\"_blank\">GitHub Repository</a></p>"
 }
+
+export default config

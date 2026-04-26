@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { config } from '~/assets/config'
+import config from '~/assets/config'
 import '@mdui/icons/keyboard-arrow-down'
 import { default as repos, repoStatuses } from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
 useHead({
-  title: '搜索 - ' + config.title,
+  title: `搜索${config.titleDelimiter}${config.title}`,
 })
 
 var keyword = ref('')
