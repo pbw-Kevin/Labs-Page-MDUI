@@ -13,11 +13,10 @@
   },
   "dependencies": {
     "@mdui/icons": "^1.0.3",
-    "@nuxtjs/sitemap": "^8.0.13",
+    "@nuxtjs/robots": "^6.0.8",
+    "@nuxtjs/sitemap": "^8.0.15",
     "@types/js-cookie": "^3.0.6",
-    "h3": "1.15.6",
     "js-cookie": "^3.0.5",
-    "nitropack": "2.13.1",
-    "nuxt": "^4.4.2"
+    "nuxt": "^4.4.4"
   }
 }
