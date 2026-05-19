@@ -97,7 +97,7 @@ const config : Config = {
       owner: "AIR-Kevin",
       version: "v0.1.0",
       createdAt: "2025-08-05",
-      modifiedAt: "2026-04-26",
+      modifiedAt: "2026-05-19",
       tags: [
         "MDUI",
         "Nuxt",

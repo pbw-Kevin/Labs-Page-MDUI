@@ -1,0 +1,40 @@
+<script setup lang="ts">
+import { toggleNavBar, isSmallDevice } from '~/assets/main'
+</script>
+
+<template>
+  <div class="route-loading-container" :style="{
+    transform: toggleNavBar && isSmallDevice ? 'translateX(-50%) translateX(180px)' : 'translateX(-50%)'
+  }">
+    <mdui-circular-progress class="route-loading-icon"></mdui-circular-progress>
+  </div>
+</template>
+
+<style scoped>
+.route-loading-container {
+  position: fixed;
+  top: -10px;
+  left: 50%;
+  transition: top var(--mdui-motion-duration-long2) var(--mdui-motion-easing-standard);
+  box-shadow: var(--mdui-elevation-level5);
+  background-color: rgb(var(--mdui-color-background));
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  text-align: center;
+  z-index: 2;
+}
+
+.route-loading-container.active {
+  top: 80px;
+}
+
+.route-loading-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+</style>

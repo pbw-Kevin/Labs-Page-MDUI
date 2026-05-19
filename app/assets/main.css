@@ -33,6 +33,12 @@ a.title:hover {
 
 .content {
   margin: 10px;
+  transition: opacity 0.5s;
+}
+
+.content.loading-disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 p {
