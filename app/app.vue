@@ -27,12 +27,16 @@ onMounted(() => {
 <template>
   <Loading :loaded="labLoaded" :error="labError"></Loading>
   <Transition name="fade">
-    <div v-if="labLoaded">
-      <TopAppBar></TopAppBar>
-      <NavigationDrawer></NavigationDrawer>
+    <div v-show="labLoaded">
+      <mdui-layout>
+        <TopAppBar></TopAppBar>
+        <BottomAppBar></BottomAppBar>
+        <NavigationDrawer></NavigationDrawer>
+        <mdui-layout-main>
+          <NuxtPage />
+        </mdui-layout-main>
+      </mdui-layout>
       <RouteLoading></RouteLoading>
-      <NuxtPage />
-      <BottomAppBar></BottomAppBar>
     </div>
   </Transition>
 </template>

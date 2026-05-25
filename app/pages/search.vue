@@ -60,7 +60,13 @@ var satisfiedRepos = computed(() => {
         </mdui-button-icon>
       </mdui-select>
     </div>
+    <p>
+      💡 提示：再点一次状态中的选项可以取消选择
+    </p>
     <RepoCardGroup :repos="satisfiedRepos"></RepoCardGroup>
+    <p v-if="satisfiedRepos.length == 0" class="no-repo">
+      没有找到相关项目
+    </p>
   </div>
 </template>
 
@@ -77,5 +83,9 @@ mdui-text-field {
 
 mdui-select {
   width: 200px;
+}
+
+.no-repo {
+  text-align: center;
 }
 </style>

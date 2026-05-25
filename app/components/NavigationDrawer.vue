@@ -7,8 +7,13 @@ import { toggleNavBar, autoToggleNavBar } from '~/assets/main'
 </script>
 
 <template>
-  <mdui-navigation-drawer class="navigation-drawer" :open="toggleNavBar" close-on-overlay-click>
-    <mdui-list>
+  <mdui-navigation-drawer
+    class="navigation-drawer"
+    :open="toggleNavBar"
+    @open="toggleNavBar = true"
+    @close="toggleNavBar = false"
+    close-on-overlay-click
+  ><mdui-list>
       <mdui-list-subheader>导航</mdui-list-subheader>
       <NuxtLink to="/" class="title" @click="autoToggleNavBar()">
         <mdui-list-item rounded>
@@ -40,7 +45,7 @@ import { toggleNavBar, autoToggleNavBar } from '~/assets/main'
 
 <style scoped>
 mdui-navigation-drawer {
-  position: fixed;
+  position: fixed !important;
   top: 64px;
   box-shadow: var(--mdui-elevation-level2);
 }
