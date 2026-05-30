@@ -97,7 +97,7 @@ const config : Config = {
       owner: "AIR-Kevin",
       version: "v0.1.0",
       createdAt: "2025-08-05",
-      modifiedAt: process.env.VITE_BUILD_DATE as string,
+      modifiedAt: process.env.VITE_BUILD_DATE || '-',
       tags: [
         "MDUI",
         "Nuxt",

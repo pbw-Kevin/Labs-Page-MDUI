@@ -1,11 +1,25 @@
+type Mdui = {
+  observeResize: (element: HTMLElement, callback?: (entry: ResizeObserverEntry, observer: {
+    unobserve: () => void
+  }) => void) => {
+    unobserve: () => void
+  }
+  setColorScheme: (color: string) => void
+  setTheme: (theme: 'light' | 'dark' | 'auto') => void
+  getTheme: () => 'light' | 'dark' | 'auto'
+  breakpoint: () => {
+    up: (breakpoint: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl') => boolean
+  }
+}
+
 declare global {
   interface Window {
-    mdui: any
+    mdui: Mdui
     mduiLoadError: boolean
   }
 }
 
-var mdui: any = null
+var mdui: Mdui | undefined = undefined
 import Cookies from 'js-cookie'
 import config from './config'
 
@@ -52,14 +66,19 @@ export async function init() {
       }, 100)
     })) return
   }
+  if (!mdui) {
+    labError.value = true
+    return
+  }
   isSmallDevice.value = window.innerWidth < 470
-  mdui.observeResize(document.body, function (entry: any) {
+  mdui.observeResize(document.body, function (entry) {
     isSmallDevice.value = ( entry.borderBoxSize[0]?.inlineSize || 1000 ) < 470
   })
   mdui.setColorScheme(colorScheme)
   mdui.setTheme(theme)
   themeMedia = window.matchMedia("(prefers-color-scheme: dark)")
   themeMedia.addEventListener("change", (event) => {
+    if (!mdui) return
     if(mdui.getTheme() == 'auto'){
       if (event.matches) {
         realTheme.value = 'dark'
@@ -88,7 +107,7 @@ export async function init() {
 }
 
 export function getRealTheme() : 'light' | 'dark' {
-  var curTheme = mdui.getTheme()
+  var curTheme = mdui?.getTheme() || 'auto'
   if(curTheme == 'auto') {
     return themeMedia.matches ? 'dark' : 'light'
   }
@@ -96,6 +115,7 @@ export function getRealTheme() : 'light' | 'dark' {
 }
 
 export function changeTheme() {
+  if(!mdui) return
   if(realTheme.value == 'light') {
     realTheme.value = 'dark'
     mdui.setTheme('dark')
@@ -113,6 +133,7 @@ export function changeTheme() {
 export var toggleNavBar = ref(false)
 
 export function autoToggleNavBar() {
+  if (!mdui) return
   toggleNavBar.value = mdui.breakpoint().up('md')
 }
 
