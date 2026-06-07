@@ -34,6 +34,7 @@ export var themeSwitchHover = ref(false)
 var themeMedia: MediaQueryList
 
 export var isSmallDevice = ref(false)
+export var isUpMd = ref(true)
 
 function setThemeCssVars(theme: 'light' | 'dark') {
   const cssVars = [
@@ -71,8 +72,10 @@ export async function init() {
     return
   }
   isSmallDevice.value = window.innerWidth < 470
+  isUpMd.value = mdui.breakpoint().up('md')
   mdui.observeResize(document.body, function (entry) {
     isSmallDevice.value = ( entry.borderBoxSize[0]?.inlineSize || 1000 ) < 470
+    isUpMd.value = mdui ? mdui.breakpoint().up('md') : true
   })
   mdui.setColorScheme(colorScheme)
   mdui.setTheme(theme)
@@ -133,8 +136,7 @@ export function changeTheme() {
 export var toggleNavBar = ref(false)
 
 export function autoToggleNavBar() {
-  if (!mdui) return
-  toggleNavBar.value = mdui.breakpoint().up('md')
+  toggleNavBar.value = isUpMd.value
 }
 
 export type Repo = {
