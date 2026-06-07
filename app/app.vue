@@ -6,6 +6,7 @@ import RouteLoading from '~/components/RouteLoading.vue'
 import TopAppBar from '~/components/TopAppBar.vue'
 import NavigationDrawer from '~/components/NavigationDrawer.vue'
 import BottomAppBar from '~/components/BottomAppBar.vue'
+import BgImage from '~/components/BgImage.vue'
 
 onMounted(init)
 </script>
@@ -23,6 +24,7 @@ onMounted(init)
         </mdui-layout-main>
       </mdui-layout>
       <RouteLoading></RouteLoading>
+      <BgImage></BgImage>
     </div>
   </Transition>
 </template>

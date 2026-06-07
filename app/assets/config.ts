@@ -16,6 +16,10 @@ const config : Config = {
       href: "//blog.air-kevin.rf.gd"
     }
   ],
+  bgImage: {
+    pc: "https://pic.rmb.bdstatic.com/bjh/6310851983b636c0dbfd4ebeb4c50a2b.jpeg",
+    mobile: "https://pic.rmb.bdstatic.com/bjh/6bb2a7abc9524d1470111cbc776a3a8f.jpeg",
+  },
   repos: [
     {
       id: "JS-SiteTime",

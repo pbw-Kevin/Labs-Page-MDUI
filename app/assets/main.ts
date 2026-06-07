@@ -172,6 +172,10 @@ export type Config = {
     text: string
     href: string
   }[]
+  bgImage: {
+    pc: string
+    mobile: string
+  }
   repos: Repo[]
   about: string
   bottom: string
