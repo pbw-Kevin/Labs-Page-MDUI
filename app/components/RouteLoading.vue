@@ -35,7 +35,7 @@ onUnmounted(() => {
 <style scoped>
 .route-loading-container {
   position: fixed;
-  top: -10px;
+  top: -80px;
   left: 50%;
   transition: top var(--mdui-motion-duration-long2) var(--mdui-motion-easing-standard);
   box-shadow: var(--mdui-elevation-level5);

@@ -175,6 +175,8 @@ export type Config = {
   bgImage: {
     pc: string
     mobile: string
+    opacity: number
+    frontOpacity: number
   }
   repos: Repo[]
   about: string

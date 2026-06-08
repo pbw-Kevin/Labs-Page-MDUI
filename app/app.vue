@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import '~/assets/main.css'
+import config from '~/assets/config'
 import { init, labLoaded, labError } from '~/assets/main'
 import Loading from '~/components/Loading.vue'
 import RouteLoading from '~/components/RouteLoading.vue'
@@ -16,10 +17,10 @@ onMounted(init)
   <Transition name="fade">
     <div v-show="labLoaded">
       <mdui-layout>
-        <TopAppBar></TopAppBar>
-        <BottomAppBar></BottomAppBar>
-        <NavigationDrawer></NavigationDrawer>
-        <mdui-layout-main>
+        <TopAppBar :style="{ opacity: config.bgImage.frontOpacity }"></TopAppBar>
+        <BottomAppBar :style="{ opacity: config.bgImage.frontOpacity }"></BottomAppBar>
+        <NavigationDrawer :style="{ opacity: config.bgImage.frontOpacity }"></NavigationDrawer>
+        <mdui-layout-main :style="{ opacity: config.bgImage.frontOpacity }">
           <NuxtPage />
         </mdui-layout-main>
       </mdui-layout>

@@ -3,16 +3,18 @@ import config from '~/assets/config'
 </script>
 
 <template>
-  <div class="bg-img-container">
+  <div class="bg-img-container" :style="{ opacity: config.bgImage.opacity }">
     <img
       class="bg-img-mobile bg-img"
       draggable="false"
       :src="config.bgImage.mobile"
+      v-if="config.bgImage.mobile"
     />
     <img
       class="bg-img-pc bg-img"
       draggable="false"
       :src="config.bgImage.pc"
+      v-if="config.bgImage.pc"
     />
   </div>
 </template>
@@ -20,7 +22,7 @@ import config from '~/assets/config'
 <style scoped>
 .bg-img-container {
   position: fixed;
-  top: 64px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -34,8 +36,7 @@ import config from '~/assets/config'
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none;
-  opacity: 0.3;
+  pointer-events: none;
 }
 
 @media (min-aspect-ratio: 6/7) {
