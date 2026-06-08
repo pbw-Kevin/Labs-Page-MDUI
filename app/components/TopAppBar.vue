@@ -24,10 +24,10 @@ import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice }
       >{{ item.text }}</a>
     </mdui-top-app-bar-title>
     <mdui-button-icon @click="changeTheme()" @mouseover="themeSwitchHover = true" @mouseleave="themeSwitchHover = false">
-      <mdui-icon-light-mode--outlined v-if="realTheme == 'light' && !themeSwitchHover"></mdui-icon-light-mode--outlined>
-      <mdui-icon-light-mode v-else-if="realTheme == 'light' && themeSwitchHover"></mdui-icon-light-mode>
-      <mdui-icon-dark-mode--outlined v-else-if="realTheme == 'dark' && !themeSwitchHover"></mdui-icon-dark-mode--outlined>
-      <mdui-icon-dark-mode v-else-if="realTheme == 'dark' && themeSwitchHover"></mdui-icon-dark-mode>
+      <mdui-icon-light-mode--outlined v-if="realTheme === 'light' && !themeSwitchHover"></mdui-icon-light-mode--outlined>
+      <mdui-icon-light-mode v-else-if="realTheme === 'light' && themeSwitchHover"></mdui-icon-light-mode>
+      <mdui-icon-dark-mode--outlined v-else-if="realTheme === 'dark' && !themeSwitchHover"></mdui-icon-dark-mode--outlined>
+      <mdui-icon-dark-mode v-else-if="realTheme === 'dark' && themeSwitchHover"></mdui-icon-dark-mode>
       <mdui-icon-incomplete-circle v-else></mdui-icon-incomplete-circle>
     </mdui-button-icon>
   </mdui-top-app-bar>

@@ -1,5 +1,27 @@
 <script setup lang="ts">
 import { toggleNavBar, isUpMd } from '~/assets/main'
+
+var guardBeforeEach: (() => void) | undefined = undefined
+var guardAfterEach: (() => void) | undefined = undefined
+
+onMounted(() => {
+  var router = useRouter()
+
+  guardBeforeEach = router.beforeEach(() => {
+    document.querySelector('.route-loading-container')?.classList.add("active")
+    document.querySelector('.content')?.classList.add("loading-disabled")
+  })
+
+  guardAfterEach = router.afterEach(() => {
+    document.querySelector('.route-loading-container')?.classList.remove("active")
+    document.querySelector('.content')?.classList.remove("loading-disabled")
+  })
+})
+
+onUnmounted(() => {
+  guardBeforeEach?.()
+  guardAfterEach?.()
+})
 </script>
 
 <template>

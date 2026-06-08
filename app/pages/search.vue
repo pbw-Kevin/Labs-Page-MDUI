@@ -8,38 +8,36 @@ useHead({
   title: `搜索${config.titleDelimiter}${config.title}`
 })
 
-var keyword = ref('')
-var status = ref('')
+const keyword = ref('')
+const status = ref('')
 
 onMounted(() => {
-  var route = useRoute()
-  keyword.value = (typeof route.query.keyword === 'string' ? route.query.keyword : '').toLowerCase()
-  status.value = (typeof route.query.status === 'string' ? route.query.status : '').toLowerCase()
+  const route = useRoute()
+  keyword.value = (typeof route.query.keyword === 'string' ? route.query.keyword.toLowerCase() : '')
+  status.value = (typeof route.query.status === 'string' ? route.query.status.toLowerCase() : '')
 })
 
-const processedRepos = repos.map((repo) => {
-  return (function processRepo(rp: any): string[] {
-    if (typeof rp === 'string') {
-      return [rp.toLowerCase()]
-    } else if (Array.isArray(rp)) {
-      return rp.flatMap(processRepo)
-    } else if (typeof rp === 'object' && rp !== null) {
-      return Object.values(rp).flatMap(processRepo)
+const processedRepos = repos.map(
+  function processRepo(repo: any): string[] {
+    if (typeof repo === 'string') {
+      return [repo.toLowerCase()]
+    } else if (Array.isArray(repo)) {
+      return repo.flatMap(processRepo)
+    } else if (typeof repo === 'object' && repo !== null) {
+      return Object.values(repo).flatMap(processRepo)
     } else {
       return []
     }
-  })(repo)
-})
+  }
+)
 
-var satisfiedRepos = computed(() => {
-  var processedKeywords = keyword.value.split(" ").map(k => k.trim().toLowerCase()).filter(k => k !== "")
+const satisfiedRepos = computed(() => {
+  const processedKeywords = keyword.value.split(" ").map(k => k.trim().toLowerCase()).filter(k => k !== "")
   return processedRepos.reduce((acc: typeof repos, repo, index) => {
     if (
       processedKeywords.every((k) => repo.some((r) => r.includes(k))) &&
       (status.value === '' || repos[index]?.status.toLowerCase() === status.value.toLowerCase())
-    ) {
-      acc.push(repos[index] as any)
-    }
+    ) acc.push(repos[index] as any)
     return acc
   }, [] as typeof repos)
 })
@@ -64,7 +62,7 @@ var satisfiedRepos = computed(() => {
       💡 提示：再点一次状态中的选项可以取消选择
     </p>
     <RepoCardGroup :repos="satisfiedRepos"></RepoCardGroup>
-    <p v-if="satisfiedRepos.length == 0" class="no-repo">
+    <p v-if="satisfiedRepos.length === 0" class="no-repo">
       没有找到相关项目
     </p>
   </div>

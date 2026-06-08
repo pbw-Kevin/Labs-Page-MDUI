@@ -3,7 +3,8 @@ import '@mdui/icons/home'
 import '@mdui/icons/search'
 import '@mdui/icons/label'
 import '@mdui/icons/info'
-import { toggleNavBar, autoToggleNavBar } from '~/assets/main'
+import { toggleNavBar } from '~/assets/main'
+import NavigationDrawerItem from '~/components/NavigationDrawerItem.vue'
 </script>
 
 <template>
@@ -15,30 +16,22 @@ import { toggleNavBar, autoToggleNavBar } from '~/assets/main'
     close-on-overlay-click
   ><mdui-list>
       <mdui-list-subheader>导航</mdui-list-subheader>
-      <NuxtLink to="/" class="title" @click="autoToggleNavBar()">
-        <mdui-list-item rounded>
-          返回首页
-          <mdui-icon-home slot="icon"></mdui-icon-home>
-        </mdui-list-item>
-      </NuxtLink>
-      <NuxtLink to="/search" class="title" @click="autoToggleNavBar()">
-        <mdui-list-item rounded>
-          搜索项目
-          <mdui-icon-search slot="icon"></mdui-icon-search>
-        </mdui-list-item>
-      </NuxtLink>
-      <NuxtLink to="/tags" class="title" @click="autoToggleNavBar()">
-        <mdui-list-item rounded>
-          标签
-          <mdui-icon-label slot="icon"></mdui-icon-label>
-        </mdui-list-item>
-      </NuxtLink>
-      <NuxtLink to="/about" class="title" @click="autoToggleNavBar()">
-        <mdui-list-item rounded>
-          关于
-          <mdui-icon-info slot="icon"></mdui-icon-info>
-        </mdui-list-item>
-      </NuxtLink>
+      <NavigationDrawerItem to="/">
+        <mdui-icon-home slot="icon"></mdui-icon-home>
+        返回首页
+      </NavigationDrawerItem>
+      <NavigationDrawerItem to="/search">
+        <mdui-icon-search slot="icon"></mdui-icon-search>
+        搜索项目
+      </NavigationDrawerItem>
+      <NavigationDrawerItem to="/tags">
+        <mdui-icon-label slot="icon"></mdui-icon-label>
+        标签
+      </NavigationDrawerItem>
+      <NavigationDrawerItem to="/about">
+        <mdui-icon-info slot="icon"></mdui-icon-info>
+        关于
+      </NavigationDrawerItem>
     </mdui-list>
   </mdui-navigation-drawer>
 </template>

@@ -24,12 +24,12 @@ export const emptyRepo : Repo = {
   ]
 }
 
-export var repoTags = 
+export const repoTags = 
   unique(config.repos.map((repo) => {
     return repo.tags
   }).flat())
 
-export var repoStatuses = 
+export const repoStatuses = 
   unique(config.repos.map((repo) => {
     return repo.status
   }))

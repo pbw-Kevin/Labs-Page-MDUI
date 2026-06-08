@@ -1,3 +1,6 @@
+import Cookies from 'js-cookie'
+import config from './config'
+
 type Mdui = {
   observeResize: (element: HTMLElement, callback?: (entry: ResizeObserverEntry, observer: {
     unobserve: () => void
@@ -20,21 +23,19 @@ declare global {
 }
 
 var mdui: Mdui | undefined = undefined
-import Cookies from 'js-cookie'
-import config from './config'
 
-export var labLoaded = ref(false)
-export var labError = ref(false)
+export const labLoaded = ref(false)
+export const labError = ref(false)
 
 const colorScheme = config.colorScheme
 const theme = config.theme
 
-export var realTheme = ref('' as 'light' | 'dark')
-export var themeSwitchHover = ref(false)
+export const realTheme = ref('' as 'light' | 'dark')
+export const themeSwitchHover = ref(false)
 var themeMedia: MediaQueryList
 
-export var isSmallDevice = ref(false)
-export var isUpMd = ref(true)
+export const isSmallDevice = ref(false)
+export const isUpMd = ref(true)
 
 function setThemeCssVars(theme: 'light' | 'dark') {
   const cssVars = [
@@ -71,18 +72,21 @@ export async function init() {
     labError.value = true
     return
   }
+
   isSmallDevice.value = window.innerWidth < 470
   isUpMd.value = mdui.breakpoint().up('md')
   mdui.observeResize(document.body, function (entry) {
     isSmallDevice.value = ( entry.borderBoxSize[0]?.inlineSize || 1000 ) < 470
     isUpMd.value = mdui ? mdui.breakpoint().up('md') : true
   })
+
   mdui.setColorScheme(colorScheme)
   mdui.setTheme(theme)
+
   themeMedia = window.matchMedia("(prefers-color-scheme: dark)")
   themeMedia.addEventListener("change", (event) => {
     if (!mdui) return
-    if(mdui.getTheme() == 'auto'){
+    if (mdui.getTheme() === 'auto') {
       if (event.matches) {
         realTheme.value = 'dark'
         setThemeCssVars('dark')
@@ -92,9 +96,10 @@ export async function init() {
       }
     }
   })
+
   var cookieTheme = Cookies.get('theme')
-  if(cookieTheme) {
-    if(cookieTheme == 'dark') {
+  if (cookieTheme) {
+    if (cookieTheme === 'dark') {
       mdui.setTheme('dark')
       setThemeCssVars('dark')
     }
@@ -103,6 +108,7 @@ export async function init() {
       setThemeCssVars('light')
     }
   }
+
   realTheme.value = getRealTheme()
   setThemeCssVars(realTheme.value)
   autoToggleNavBar()
@@ -111,21 +117,21 @@ export async function init() {
 
 export function getRealTheme() : 'light' | 'dark' {
   var curTheme = mdui?.getTheme() || 'auto'
-  if(curTheme == 'auto') {
+  if (curTheme === 'auto') {
     return themeMedia.matches ? 'dark' : 'light'
   }
   else return curTheme
 }
 
 export function changeTheme() {
-  if(!mdui) return
-  if(realTheme.value == 'light') {
+  if (!mdui) return
+  if (realTheme.value === 'light') {
     realTheme.value = 'dark'
     mdui.setTheme('dark')
     setThemeCssVars('dark')
     Cookies.set('theme', 'dark', {expires: 30})
   }
-  else if(realTheme.value == 'dark') {
+  else if (realTheme.value === 'dark') {
     realTheme.value = 'light'
     mdui.setTheme('light')
     setThemeCssVars('light')
@@ -133,7 +139,7 @@ export function changeTheme() {
   }
 }
 
-export var toggleNavBar = ref(false)
+export const toggleNavBar = ref(false)
 
 export function autoToggleNavBar() {
   toggleNavBar.value = isUpMd.value

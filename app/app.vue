@@ -7,21 +7,7 @@ import TopAppBar from '~/components/TopAppBar.vue'
 import NavigationDrawer from '~/components/NavigationDrawer.vue'
 import BottomAppBar from '~/components/BottomAppBar.vue'
 
-onMounted(() => {
-  var router = useRouter()
-
-  router.beforeEach(() => {
-    document.querySelector('.route-loading-container')?.classList.add("active")
-    document.querySelector('.content')?.classList.add("loading-disabled")
-  })
-
-  router.afterEach(() => {
-    document.querySelector('.route-loading-container')?.classList.remove("active")
-    document.querySelector('.content')?.classList.remove("loading-disabled")
-  })
-
-  init()
-})
+onMounted(init)
 </script>
 
 <template>

@@ -1,21 +1,24 @@
 <script lang="ts" setup>
 import config from '~/assets/config'
-import { default as allRepos } from '~/assets/repos'
+import allRepos from '~/assets/repos'
 import RepoCardGroup from '~/components/RepoCardGroup.vue'
 
-var id = ref('')
+const id = ref('')
 
-var repos = computed(() => {
+const repos = computed(() => {
   return allRepos.filter((repo) => {
     return repo.tags.includes(id.value)
   })
 })
 
 onMounted(() => {
-  var route = useRoute()
-  if (typeof route.params.id === 'string') {
-    id.value = route.params.id
+  const route = useRoute()
+  const router = useRouter()
+  if (typeof route.params.id !== 'string') {
+    router.push('/tags')
+    return
   }
+  id.value = route.params.id
   useHead({
     title: `标签：${id.value}${config.titleDelimiter}${config.title}`
   })
