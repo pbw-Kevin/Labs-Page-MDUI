@@ -14,10 +14,10 @@
   "dependencies": {
     "@mdui/icons": "^1.0.3",
     "@nuxtjs/robots": "^6.0.9",
-    "@nuxtjs/sitemap": "^8.0.15",
+    "@nuxtjs/sitemap": "^8.1.0",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.3",
     "js-cookie": "^3.0.8",
-    "nuxt": "^4.4.6"
+    "nuxt": "^4.4.8"
   }
 }
