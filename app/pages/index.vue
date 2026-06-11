@@ -9,8 +9,6 @@ useHead({
 </script>
 
 <template>
-  <div class="content">
-    <h1>项目列表</h1>
-    <RepoCardGroup :repos></RepoCardGroup>
-  </div>
+  <h1>项目列表</h1>
+  <RepoCardGroup :repos></RepoCardGroup>
 </template>

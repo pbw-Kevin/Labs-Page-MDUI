@@ -44,28 +44,26 @@ const satisfiedRepos = computed(() => {
 </script>
 
 <template>
-  <div class="content">
-    <h1>搜索</h1>
-    <div class="search-bar">
-      <mdui-text-field
-        name="keyword" label="关键词" placeholder="标题、标签、作者、简介、正文……"
-        :value="keyword" @input="keyword = $event.target.value"
-      ></mdui-text-field>
-      <mdui-select name="status" label="状态" placeholder="选择状态" :value="status" @change="status = $event.target.value">
-        <mdui-menu-item v-for="status in repoStatuses" :value="status.toLowerCase()">{{ status }}</mdui-menu-item>
-        <mdui-button-icon slot="end-icon">
-          <mdui-icon-keyboard-arrow-down></mdui-icon-keyboard-arrow-down>
-        </mdui-button-icon>
-      </mdui-select>
-    </div>
-    <p>
-      💡 提示：再点一次状态中的选项可以取消选择
-    </p>
-    <RepoCardGroup :repos="satisfiedRepos"></RepoCardGroup>
-    <p v-if="satisfiedRepos.length === 0" class="no-repo">
-      没有找到相关项目
-    </p>
+  <h1>搜索</h1>
+  <div class="search-bar">
+    <mdui-text-field
+      name="keyword" label="关键词" placeholder="标题、标签、作者、简介、正文……"
+      :value="keyword" @input="keyword = $event.target.value"
+    ></mdui-text-field>
+    <mdui-select name="status" label="状态" placeholder="选择状态" :value="status" @change="status = $event.target.value">
+      <mdui-menu-item v-for="status in repoStatuses" :value="status.toLowerCase()">{{ status }}</mdui-menu-item>
+      <mdui-button-icon slot="end-icon">
+        <mdui-icon-keyboard-arrow-down></mdui-icon-keyboard-arrow-down>
+      </mdui-button-icon>
+    </mdui-select>
   </div>
+  <p>
+    💡 提示：再点一次状态中的选项可以取消选择
+  </p>
+  <RepoCardGroup :repos="satisfiedRepos"></RepoCardGroup>
+  <p v-if="satisfiedRepos.length === 0" class="no-repo">
+    没有找到相关项目
+  </p>
 </template>
 
 <style scoped>

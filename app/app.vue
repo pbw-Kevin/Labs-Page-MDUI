@@ -19,7 +19,9 @@ onMounted(init)
         <BottomAppBar></BottomAppBar>
         <NavigationDrawer></NavigationDrawer>
         <mdui-layout-main>
-          <NuxtPage />
+          <div class="content">
+            <NuxtPage />
+          </div>
         </mdui-layout-main>
       </mdui-layout>
       <RouteLoading></RouteLoading>
