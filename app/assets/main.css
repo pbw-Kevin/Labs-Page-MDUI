@@ -17,12 +17,11 @@ body {
 }
 
 a {
-	color: rgb(var(--mdui-color-link));
+	color: rgb(var(--mdui-color-primary));
 	text-decoration: none;
 }
 
 a:hover {
-	color: rgb(var(--mdui-color-link-hover));
   text-decoration: underline;
 }
 
