@@ -39,8 +39,6 @@ export const isUpMd = ref(true)
 
 function setThemeCssVars(theme: 'light' | 'dark') {
   const cssVars = [
-    'link',
-    'link-hover',
     'status-stable',
     'status-unstable',
     'status-unknown'
