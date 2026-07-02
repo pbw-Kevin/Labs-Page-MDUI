@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import '~/assets/main.css'
 import { init, labLoaded, labError } from '~/assets/main'
 import Loading from '~/components/Loading.vue'

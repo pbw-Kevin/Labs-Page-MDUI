@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { toggleNavBar, isUpMd } from '~/assets/main'
 
 var guardBeforeEach: (() => void) | undefined = undefined

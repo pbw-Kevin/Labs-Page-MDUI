@@ -37,14 +37,14 @@ var themeMedia: MediaQueryList
 export const isSmallDevice = ref(false)
 export const isUpMd = ref(true)
 
-function setThemeCssVars(theme: 'light' | 'dark') {
+function setThemeCssVars(thm: 'light' | 'dark') {
   const cssVars = [
     'status-stable',
     'status-unstable',
     'status-unknown'
   ]
   cssVars.forEach((cssVar) => {
-    document.documentElement.style.setProperty('--mdui-color-' + cssVar, 'var(--mdui-color-' + cssVar + '-' + theme + ')')
+    document.documentElement.style.setProperty('--mdui-color-' + cssVar, 'var(--mdui-color-' + cssVar + '-' + thm + ')')
   })
 }
 
@@ -86,11 +86,9 @@ export async function init() {
     if (!mdui) return
     if (mdui.getTheme() === 'auto') {
       if (event.matches) {
-        realTheme.value = 'dark'
-        setThemeCssVars('dark')
+        setTheme('dark', true)
       } else {
-        realTheme.value = 'light'
-        setThemeCssVars('light')
+        setTheme('light', true)
       }
     }
   })
@@ -98,12 +96,10 @@ export async function init() {
   var cookieTheme = Cookies.get('theme')
   if (cookieTheme) {
     if (cookieTheme === 'dark') {
-      mdui.setTheme('dark')
-      setThemeCssVars('dark')
+      setTheme('dark', false)
     }
-    else {
-      mdui.setTheme('light')
-      setThemeCssVars('light')
+    else if (cookieTheme === 'light') {
+      setTheme('dark', false)
     }
   }
 
@@ -122,19 +118,16 @@ export function getRealTheme() : 'light' | 'dark' {
 }
 
 export function changeTheme() {
+  setTheme(realTheme.value === 'light' ? 'dark' : 'light', false)
+}
+
+function setTheme(thm : 'light' | 'dark', varsOnly : boolean) {
   if (!mdui) return
-  if (realTheme.value === 'light') {
-    realTheme.value = 'dark'
-    mdui.setTheme('dark')
-    setThemeCssVars('dark')
-    Cookies.set('theme', 'dark', {expires: 30})
-  }
-  else if (realTheme.value === 'dark') {
-    realTheme.value = 'light'
-    mdui.setTheme('light')
-    setThemeCssVars('light')
-    Cookies.set('theme', 'light', {expires: 30})
-  }
+  realTheme.value = thm
+  setThemeCssVars(thm)
+  if (varsOnly) return
+  mdui.setTheme(thm)
+  Cookies.set('theme', thm, {expires: 30})
 }
 
 export const toggleNavBar = ref(false)

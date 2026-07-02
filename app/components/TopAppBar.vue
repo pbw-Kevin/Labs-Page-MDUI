@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import config from '~/assets/config'
 import '@mdui/icons/menu'
 import '@mdui/icons/light-mode'
@@ -16,9 +16,9 @@ import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice }
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
     <mdui-top-app-bar-title>
-      <NuxtLink to="/" style="color: rgb(var(--mdui-color-on-background)); text-decoration: none;">{{ config.title }}</NuxtLink>
+      <NuxtLink to="/" class="title">{{ config.title }}</NuxtLink>
       <a
-        style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;"
+        class="title small-title"
         :href="item.href"
         v-for="(item, index) in config.subtitles" :key="index"
       >{{ item.text }}</a>
@@ -38,5 +38,10 @@ mdui-top-app-bar {
   position: fixed !important;
   box-shadow: var(--mdui-elevation-level4);
   background-color: rgb(var(--mdui-color-primary-container));
+}
+
+.small-title {
+  margin-left: 8px;
+  font-size: 16px;
 }
 </style>

@@ -26,7 +26,7 @@ onMounted(() => {
 
 <template>
   <h1>项目：{{ id }}</h1>
-  <RepoDetail :id="id" v-if="existRepo"></RepoDetail>
+  <RepoDetail :id v-if="existRepo"></RepoDetail>
   <p v-else>
     项目不存在<br />
     <NuxtLink to="/">返回首页</NuxtLink>
