@@ -32,6 +32,19 @@ export default defineNuxtConfig({
       
         return `${year}-${month}-${day}`;
       })())
+    },
+    $client: {
+      build: {
+        rollupOptions: {
+          onwarn: (warning, warn) => {
+            if (warning.code === "SOURCEMAP_BROKEN") {
+              return
+            } else {
+              warn(warning)
+            }
+          }
+        }
+      }
     }
   },
 
@@ -42,6 +55,15 @@ export default defineNuxtConfig({
         .concat(repoTags.map((tag) => {
           return `/tags/${tag}`
         }))
+    },
+    rollupConfig: {
+      onwarn: (warning, warn) => {
+        if (warning.code === "UNRESOLVED_IMPORT" || warning.code === "CIRCULAR_DEPENDENCY") {
+          return
+        } else {
+          warn(warning)
+        }
+      }
     }
   },
 
