@@ -72,12 +72,12 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/mdui@2/mdui.css'
+          href: 'https://unpkg.com/mdui@2.1.5/mdui.css'
         }
       ],
       script: [
         {
-          src: 'https://unpkg.com/mdui@2/mdui.global.js',
+          src: 'https://unpkg.com/mdui@2.1.5/mdui.global.js',
           onerror: 'window.mduiLoadError = true;',
           async: true
         }
