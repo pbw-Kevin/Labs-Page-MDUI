@@ -32,19 +32,6 @@ export default defineNuxtConfig({
       
         return `${year}-${month}-${day}`;
       })())
-    },
-    $client: {
-      build: {
-        rollupOptions: {
-          onwarn: (warning, warn) => {
-            if (warning.code === "SOURCEMAP_BROKEN") {
-              return
-            } else {
-              warn(warning)
-            }
-          }
-        }
-      }
     }
   },
 
@@ -58,7 +45,7 @@ export default defineNuxtConfig({
     },
     rollupConfig: {
       onwarn: (warning, warn) => {
-        if (warning.code === "UNRESOLVED_IMPORT" || warning.code === "CIRCULAR_DEPENDENCY") {
+        if (["UNRESOLVED_IMPORT", "CIRCULAR_DEPENDENCY", "UNUSED_EXTERNAL_IMPORT"].includes(warning.code || "")) {
           return
         } else {
           warn(warning)
