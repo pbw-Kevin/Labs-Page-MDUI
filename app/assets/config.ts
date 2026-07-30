@@ -75,7 +75,7 @@ const config : Config = {
       owner: "AIR-Kevin",
       version: "Version 1.0",
       createdAt: "2025-08-01",
-      modifiedAt: "2026-02-21",
+      modifiedAt: "2026-07-27",
       tags: [
         "极域电子教室",
         "C++",
