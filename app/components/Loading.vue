@@ -28,82 +28,124 @@ defineProps<{
   height: calc(100vh - 16px);
 }
 
-.loading-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
+.mdui-theme-light .loading-icon {
   border: 2px solid #000;
   border-top-color: transparent;
   border-radius: 100%;
   animation: loading-icon infinite 0.75s linear;
 }
+
+.mdui-theme-dark .loading-icon {
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 100%;
+  animation: loading-icon infinite 0.75s linear;
+}
+
+@media (prefers-color-scheme: light) {
+  .mdui-theme-auto {
+    border: 2px solid #000;
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: loading-icon infinite 0.75s linear;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-auto {
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: loading-icon infinite 0.75s linear;
+  }
+}
+
+.loading-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
 @keyframes loading-icon {
-  0%  {
+  0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 .error {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: block;
-    stroke-width: 2;
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    margin: 20px;
-    box-shadow: inset 0px 0px 0px #e74c3c;
-    animation: fill-red 0.5s ease-in-out 0.5s forwards, scale 0.3s ease-in-out 0.7s both;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 20px;
+  box-shadow: inset 0px 0px 0px #e74c3c;
+  animation: fill-red 0.5s ease-in-out 0.5s forwards, scale 0.3s ease-in-out 0.7s both;
 }
+
 .error .circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-    stroke: #e74c3c;
-    fill: none;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #e74c3c;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
+
 .error .line {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.7s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.7s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
+
 .error .line:nth-child(1) {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
+
 .error .line:nth-child(2) {
-    /* Animate */
-     
-    animation-delay: 0.7s;
+  /* Animate */
+
+  animation-delay: 0.7s;
 }
+
 @keyframes stroke {
-    100% {
-        stroke-dashoffset: 0;
-    }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
+
 @keyframes scale {
-    0%, 100% {
-        transform: none;
-    }
-    50% {
-        transform: scale3d(1.2, 1.2, 1);
-    }
-    80% {
-        transform: scale3d(0.8, 0.8, 1);
-    }
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+  }
+
+  80% {
+    transform: scale3d(0.8, 0.8, 1);
+  }
 }
+
 @keyframes fill-green {
-    100% {
-        box-shadow: inset 0px 0px 0px 25px #7ac142;
-    }
+  100% {
+    box-shadow: inset 0px 0px 0px 25px #7ac142;
+  }
 }
+
 @keyframes fill-red {
-    100% {
-        box-shadow: inset 0px 0px 0px 25px #e74c3c;
-    }
+  100% {
+    box-shadow: inset 0px 0px 0px 25px #e74c3c;
+  }
 }
 </style>

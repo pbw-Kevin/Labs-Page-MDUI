@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     },
     rollupConfig: {
       onwarn: (warning, warn) => {
-        if (["UNRESOLVED_IMPORT", "CIRCULAR_DEPENDENCY", "UNUSED_EXTERNAL_IMPORT"].includes(warning.code || "")) {
+        if (['UNRESOLVED_IMPORT', 'CIRCULAR_DEPENDENCY', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code || '')) {
           return
         } else {
           warn(warning)
@@ -72,5 +72,17 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots']
+  colorMode: {
+    preference: config.theme == 'auto' ? 'system' : config.theme,
+    fallback: 'light',
+    classPrefix: 'mdui-theme-',
+    storage: 'cookie',
+    storageKey: 'theme',
+    cookieAttrs: {
+      maxAge: 2592000,
+      path: '/'
+    }
+  },
+
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/color-mode']
 })
