@@ -31,32 +31,24 @@ defineProps<{
 .mdui-theme-light .loading-icon {
   border: 2px solid #000;
   border-top-color: transparent;
-  border-radius: 100%;
-  animation: loading-icon infinite 0.75s linear;
 }
 
 .mdui-theme-dark .loading-icon {
   border: 2px solid #fff;
   border-top-color: transparent;
-  border-radius: 100%;
-  animation: loading-icon infinite 0.75s linear;
 }
 
 @media (prefers-color-scheme: light) {
-  .mdui-theme-auto {
+  .mdui-theme-auto .loading-icon {
     border: 2px solid #000;
     border-top-color: transparent;
-    border-radius: 100%;
-    animation: loading-icon infinite 0.75s linear;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .mdui-theme-auto {
+  .mdui-theme-auto .loading-icon {
     border: 2px solid #fff;
     border-top-color: transparent;
-    border-radius: 100%;
-    animation: loading-icon infinite 0.75s linear;
   }
 }
 
@@ -64,6 +56,8 @@ defineProps<{
   width: 30px;
   height: 30px;
   margin: 0 10px;
+  border-radius: 100%;
+  animation: loading-icon infinite 0.75s linear;
 }
 
 @keyframes loading-icon {
@@ -111,8 +105,6 @@ defineProps<{
 }
 
 .error .line:nth-child(2) {
-  /* Animate */
-
   animation-delay: 0.7s;
 }
 
@@ -123,8 +115,7 @@ defineProps<{
 }
 
 @keyframes scale {
-  0%,
-  100% {
+  0%, 100% {
     transform: none;
   }
 
@@ -134,12 +125,6 @@ defineProps<{
 
   80% {
     transform: scale3d(0.8, 0.8, 1);
-  }
-}
-
-@keyframes fill-green {
-  100% {
-    box-shadow: inset 0px 0px 0px 25px #7ac142;
   }
 }
 
