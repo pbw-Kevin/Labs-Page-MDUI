@@ -19,7 +19,9 @@ import '@mdui/icons/menu'
         v-for="(item, index) in config.subtitles" :key="index"
       >{{ item.text }}</a>
     </mdui-top-app-bar-title>
-    <ThemeButton></ThemeButton>
+    <ClientOnly>
+      <ThemeButton></ThemeButton>
+    </ClientOnly>
   </mdui-top-app-bar>
 </template>
 
