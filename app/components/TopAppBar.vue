@@ -1,13 +1,9 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+import ThemeButton from './ThemeButton.vue'
 import config from '~/assets/config'
-import '@mdui/icons/menu'
-import '@mdui/icons/light-mode'
-import '@mdui/icons/light-mode--outlined'
-import '@mdui/icons/dark-mode'
-import '@mdui/icons/dark-mode--outlined'
-import '@mdui/icons/incomplete-circle'
+import { toggleNavBar, isSmallDevice } from '~/assets/main'
 
-import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice } from '~/assets/main'
+import '@mdui/icons/menu'
 </script>
 
 <template>
@@ -16,27 +12,27 @@ import { realTheme, themeSwitchHover, changeTheme, toggleNavBar, isSmallDevice }
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
     <mdui-top-app-bar-title>
-      <NuxtLink to="/" style="color: rgb(var(--mdui-color-on-background)); text-decoration: none;">{{ config.title }}</NuxtLink>
+      <NuxtLink to="/" class="title">{{ config.title }}</NuxtLink>
       <a
-        style="margin-left: 8px; color: rgb(var(--mdui-color-on-background)); text-decoration: none; font-size: 16px;"
+        class="title small-title"
         :href="item.href"
         v-for="(item, index) in config.subtitles" :key="index"
       >{{ item.text }}</a>
     </mdui-top-app-bar-title>
-    <mdui-button-icon @click="changeTheme()" @mouseover="themeSwitchHover = true" @mouseleave="themeSwitchHover = false">
-      <mdui-icon-light-mode--outlined v-if="realTheme === 'light' && !themeSwitchHover"></mdui-icon-light-mode--outlined>
-      <mdui-icon-light-mode v-else-if="realTheme === 'light' && themeSwitchHover"></mdui-icon-light-mode>
-      <mdui-icon-dark-mode--outlined v-else-if="realTheme === 'dark' && !themeSwitchHover"></mdui-icon-dark-mode--outlined>
-      <mdui-icon-dark-mode v-else-if="realTheme === 'dark' && themeSwitchHover"></mdui-icon-dark-mode>
-      <mdui-icon-incomplete-circle v-else></mdui-icon-incomplete-circle>
-    </mdui-button-icon>
+    <ClientOnly>
+      <ThemeButton></ThemeButton>
+    </ClientOnly>
   </mdui-top-app-bar>
 </template>
 
 <style scoped>
 mdui-top-app-bar {
-  position: fixed !important;
   box-shadow: var(--mdui-elevation-level4);
   background-color: rgb(var(--mdui-color-primary-container));
+}
+
+.small-title {
+  margin-left: 8px;
+  font-size: 16px;
 }
 </style>

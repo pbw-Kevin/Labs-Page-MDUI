@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { autoToggleNavBar } from '~/assets/main'
 
 defineProps<{
@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="to" class="title" @click="autoToggleNavBar()">
+  <NuxtLink :to class="title" @click="autoToggleNavBar()">
     <mdui-list-item rounded>
       <slot></slot>
     </mdui-list-item>

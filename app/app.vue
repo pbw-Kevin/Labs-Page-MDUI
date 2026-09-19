@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import '~/assets/main.css'
 import config from '~/assets/config'
 import { init, labLoaded, labError } from '~/assets/main'
@@ -21,7 +21,9 @@ onMounted(init)
         <BottomAppBar :style="{ opacity: config.bgImage.frontOpacity }"></BottomAppBar>
         <NavigationDrawer :style="{ opacity: config.bgImage.frontOpacity }"></NavigationDrawer>
         <mdui-layout-main :style="{ opacity: config.bgImage.frontOpacity }">
-          <NuxtPage />
+          <div class="content">
+            <NuxtPage />
+          </div>
         </mdui-layout-main>
       </mdui-layout>
       <RouteLoading></RouteLoading>

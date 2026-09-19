@@ -7,8 +7,6 @@ useHead({
 </script>
 
 <template>
-  <div class="content">
-    <h1>关于</h1>
-    <div v-html="config.about"></div>
-  </div>
+  <h1>关于</h1>
+  <div v-html="config.about"></div>
 </template>

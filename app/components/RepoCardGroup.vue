@@ -8,7 +8,7 @@ const prop = defineProps<{
 </script>
 
 <template>
-  <div class="repo-card-container" :style="{ maxWidth: (prop.repos.length * 410 + 389) + 'px' }">
+  <div class="repo-card-container">
     <RepoCard v-for="repo in prop.repos" :repo />
   </div>
 </template>
@@ -16,7 +16,7 @@ const prop = defineProps<{
 <style scoped>
 .repo-card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 10px;
 }
 

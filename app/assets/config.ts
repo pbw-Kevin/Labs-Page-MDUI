@@ -41,7 +41,7 @@ const config : Config = {
           url: "https://blog.air-kevin.rf.gd/2024/JS-SiteTime"
         },
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/JS-SiteTime",
           target: "_blank"
         }
@@ -68,7 +68,7 @@ const config : Config = {
           target: "_blank"
         },
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/JoyEver",
           target: "_blank"
         }
@@ -81,7 +81,7 @@ const config : Config = {
       owner: "AIR-Kevin",
       version: "Version 1.0",
       createdAt: "2025-08-01",
-      modifiedAt: "2026-02-21",
+      modifiedAt: "2026-07-27",
       tags: [
         "极域电子教室",
         "C++",
@@ -90,7 +90,7 @@ const config : Config = {
       status: "Stable",
       links: [
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/JiYu-UDP-Attack-Cpp",
           target: "_blank"
         }
@@ -116,7 +116,7 @@ const config : Config = {
           url: "https://labs.air-kevin.rf.gd/"
         },
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/Labs-Page-MDUI",
           target: "_blank"
         }
@@ -137,7 +137,7 @@ const config : Config = {
       status: "Stable",
       links: [
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/hexo-deployer-feedftp",
           target: "_blank"
         }
@@ -163,7 +163,7 @@ const config : Config = {
           url: "https://blog.air-kevin.rf.gd/2026/yet-another-maze"
         },
         {
-          name: "GitHub Repository",
+          name: "GitHub 仓库",
           url: "https://github.com/pbw-Kevin/Yet-Another-Maze",
           target: "_blank"
         }
@@ -171,7 +171,7 @@ const config : Config = {
     }
   ],
   about: "<p>由 <a href=\"https://air-kevin.rf.gd/\">AIR-Kevin</a> 制作。<br />基于 <a href=\"https://mdui.org/\" target=\"_blank\">MDUI</a> 和 <a href=\"https://nuxt.com/\" target=\"_blank\">Nuxt</a> 开发。<br />使用深色模式效果更佳！</p>",
-  bottom: "<p>&copy; 2026 <a href=\"//air-kevin.rf.gd\">AIR-Kevin</a><br /><a href=\"https://github.com/pbw-Kevin/Labs-Page-MDUI\" target=\"_blank\">GitHub Repository</a></p>"
+  bottom: "<p>&copy; 2026 <a href=\"//air-kevin.rf.gd\">AIR-Kevin</a><br /><a href=\"https://github.com/pbw-Kevin/Labs-Page-MDUI\" target=\"_blank\">GitHub 仓库</a></p>"
 }
 
 export default config

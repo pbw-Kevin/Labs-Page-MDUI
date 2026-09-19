@@ -42,6 +42,15 @@ export default defineNuxtConfig({
         .concat(repoTags.map((tag) => {
           return `/tags/${tag}`
         }))
+    },
+    rollupConfig: {
+      onwarn: (warning, warn) => {
+        if (['UNRESOLVED_IMPORT', 'CIRCULAR_DEPENDENCY', 'UNUSED_EXTERNAL_IMPORT'].includes(warning.code || '')) {
+          return
+        } else {
+          warn(warning)
+        }
+      }
     }
   },
 
@@ -50,12 +59,12 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/mdui@2/mdui.css'
+          href: 'https://unpkg.com/mdui@2.1.5/mdui.css'
         }
       ],
       script: [
         {
-          src: 'https://unpkg.com/mdui@2/mdui.global.js',
+          src: 'https://unpkg.com/mdui@2.1.5/mdui.global.js',
           onerror: 'window.mduiLoadError = true;',
           async: true
         }
@@ -63,5 +72,17 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots']
+  colorMode: {
+    preference: config.theme == 'auto' ? 'system' : config.theme,
+    fallback: 'light',
+    classPrefix: 'mdui-theme-',
+    storage: 'cookie',
+    storageKey: 'theme',
+    cookieAttrs: {
+      maxAge: 2592000,
+      path: '/'
+    }
+  },
+
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/color-mode']
 })

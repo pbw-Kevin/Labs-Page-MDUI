@@ -1,28 +1,56 @@
 :root {
   --mdui-color-shadow-dark: 200, 200, 200 !important;
-  --mdui-color-link-light: 255, 64, 129;
-  --mdui-color-link-hover-light: 255, 24, 105;
   --mdui-color-status-stable-light: 51, 241, 51;
-  --mdui-color-status-unstable-light: 255, 220, 44;
+  --mdui-color-status-unstable-light: 232, 232, 44;
   --mdui-color-status-unknown-light: 184, 209, 209;
-  --mdui-color-link-dark: 254, 160, 201;
-  --mdui-color-link-hover-dark: 238, 109, 154;
   --mdui-color-status-stable-dark: 26, 104, 26;
-  --mdui-color-status-unstable-dark: 147, 111, 0;
+  --mdui-color-status-unstable-dark: 128, 128, 0;
   --mdui-color-status-unknown-dark: 88, 101, 101;
+}
+
+.mdui-theme-light {
+  --mdui-color-status-stable: var(--mdui-color-status-stable-light);
+  --mdui-color-status-unstable: var(--mdui-color-status-unstable-light);
+  --mdui-color-status-unknown: var(--mdui-color-status-unknown-light);
+}
+
+.mdui-theme-dark {
+  --mdui-color-status-stable: var(--mdui-color-status-stable-dark);
+  --mdui-color-status-unstable: var(--mdui-color-status-unstable-dark);
+  --mdui-color-status-unknown: var(--mdui-color-status-unknown-dark);
+}
+
+@media (prefers-color-scheme: light) {
+  .mdui-theme-auto {
+    --mdui-color-status-stable: var(--mdui-color-status-stable-light);
+    --mdui-color-status-unstable: var(--mdui-color-status-unstable-light);
+    --mdui-color-status-unknown: var(--mdui-color-status-unknown-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-auto {
+    --mdui-color-status-stable: var(--mdui-color-status-stable-dark);
+    --mdui-color-status-unstable: var(--mdui-color-status-unstable-dark);
+    --mdui-color-status-unknown: var(--mdui-color-status-unknown-dark);
+  }
 }
 
 body {
   margin: 0;
 }
 
+mdui-layout {
+  height: 100vh;
+  width: 100vw;
+}
+
 a {
-	color: rgb(var(--mdui-color-link));
+	color: rgb(var(--mdui-color-primary));
 	text-decoration: none;
 }
 
 a:hover {
-	color: rgb(var(--mdui-color-link-hover));
   text-decoration: underline;
 }
 

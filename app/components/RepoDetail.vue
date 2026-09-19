@@ -20,32 +20,32 @@ const repo = computed(() => {
 </script>
 
 <template>
-  <p>{{ repo.briefIntro }}</p>
+  <p class="repo-brief-intro">{{ repo.briefIntro }}</p>
   <mdui-list>
     <mdui-collapse accordion>
       <mdui-collapse-item>
         <mdui-list-item slot="header" rounded>
           <mdui-icon-info slot="icon"></mdui-icon-info>
-          Tags
+          标签
           <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
         </mdui-list-item>
         <div class="info-collapse-content">
           <div>
-            <mdui-chip>
+            <mdui-chip class="unclickable-chip">
               {{ repo.owner }}
               <mdui-icon-people slot="icon"></mdui-icon-people>
             </mdui-chip>
-            <mdui-chip>
+            <mdui-chip class="unclickable-chip">
               {{ repo.version }}
             </mdui-chip>
           </div>
           <div>
-            <mdui-chip>
-              Created at {{ repo.createdAt }}
+            <mdui-chip class="unclickable-chip">
+              创建于：{{ repo.createdAt }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
-            <mdui-chip>
-              Modified at {{ repo.modifiedAt }}
+            <mdui-chip class="unclickable-chip">
+              修改于：{{ repo.modifiedAt }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
           </div>
@@ -61,7 +61,7 @@ const repo = computed(() => {
       <mdui-collapse-item>
         <mdui-list-item slot="header" rounded>
           <mdui-icon-link slot="icon"></mdui-icon-link>
-          Links
+          相关链接
           <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
         </mdui-list-item>
         <div class="info-collapse-content">
@@ -77,5 +77,20 @@ const repo = computed(() => {
 <style scoped>
 .info-collapse-content {
   margin: 10px 40px;
+}
+
+p.repo-brief-intro {
+  font-style: italic;
+  color: rgb(var(--mdui-color-on-surface-variant));
+}
+
+mdui-chip.unclickable-chip {
+  cursor: default;
+  pointer-events: none;
+}
+
+mdui-collapse-item {
+  box-shadow: var(--mdui-elevation-level2);
+  border-radius: var(--mdui-shape-corner-extra-large);
 }
 </style>
