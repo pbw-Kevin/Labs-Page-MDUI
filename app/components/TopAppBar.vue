@@ -27,7 +27,6 @@ import '@mdui/icons/menu'
 
 <style scoped>
 mdui-top-app-bar {
-  position: fixed !important;
   box-shadow: var(--mdui-elevation-level4);
   background-color: rgb(var(--mdui-color-primary-container));
 }

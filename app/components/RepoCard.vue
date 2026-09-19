@@ -21,7 +21,6 @@ const prop = defineProps<{
 
 <style scoped>
 mdui-card {
-  overflow: overlay;
 	padding: 10px;
 	margin: 5px;
 	box-shadow: var(--mdui-elevation-level2);

@@ -9,7 +9,6 @@ import NavigationDrawerItem from '~/components/NavigationDrawerItem.vue'
 
 <template>
   <mdui-navigation-drawer
-    class="navigation-drawer"
     :open="toggleNavBar"
     @open="toggleNavBar = true"
     @close="toggleNavBar = false"
@@ -38,8 +37,6 @@ import NavigationDrawerItem from '~/components/NavigationDrawerItem.vue'
 
 <style scoped>
 mdui-navigation-drawer {
-  position: fixed !important;
-  top: 64px;
   box-shadow: var(--mdui-elevation-level2);
 }
 
@@ -47,6 +44,7 @@ mdui-list-subheader {
   height: 32px;
   line-height: 32px;
   font-size: 16px;
+  user-select: none;
 }
 
 mdui-list {

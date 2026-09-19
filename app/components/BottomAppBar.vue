@@ -7,9 +7,3 @@ import config from '~/assets/config'
     <div v-html="config.bottom"></div>
   </mdui-bottom-app-bar>
 </template>
-
-<style scoped>
-mdui-bottom-app-bar {
-  position: fixed !important;
-}
-</style>

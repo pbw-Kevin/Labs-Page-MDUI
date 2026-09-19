@@ -40,6 +40,11 @@ body {
   margin: 0;
 }
 
+mdui-layout {
+  height: 100vh;
+  width: 100vw;
+}
+
 a {
 	color: rgb(var(--mdui-color-primary));
 	text-decoration: none;
