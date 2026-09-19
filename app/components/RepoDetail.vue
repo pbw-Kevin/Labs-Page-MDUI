@@ -26,7 +26,7 @@ const repo = computed(() => {
       <mdui-collapse-item>
         <mdui-list-item slot="header" rounded>
           <mdui-icon-info slot="icon"></mdui-icon-info>
-          Tags
+          标签
           <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
         </mdui-list-item>
         <div class="info-collapse-content">
@@ -41,11 +41,11 @@ const repo = computed(() => {
           </div>
           <div>
             <mdui-chip class="unclickable-chip">
-              Created: {{ repo.createdAt }}
+              创建于：{{ repo.createdAt }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
             <mdui-chip class="unclickable-chip">
-              Modified: {{ repo.modifiedAt }}
+              修改于：{{ repo.modifiedAt }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
           </div>
@@ -61,7 +61,7 @@ const repo = computed(() => {
       <mdui-collapse-item>
         <mdui-list-item slot="header" rounded>
           <mdui-icon-link slot="icon"></mdui-icon-link>
-          Links
+          相关链接
           <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
         </mdui-list-item>
         <div class="info-collapse-content">

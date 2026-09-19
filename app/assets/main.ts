@@ -1,7 +1,6 @@
 import config from './config'
 
-type Theme = 'light' | 'dark'
-type ThemeMdui = Theme | 'auto'
+type Theme = 'light' | 'dark' | 'auto'
 
 type Mdui = {
   observeResize: (element: HTMLElement, callback?: (entry: ResizeObserverEntry, observer: {
@@ -101,7 +100,7 @@ export type Repo = {
 
 export type Config = {
   colorScheme: string
-  theme: ThemeMdui
+  theme: Theme
   url: string
   title: string
   titleDelimiter: string

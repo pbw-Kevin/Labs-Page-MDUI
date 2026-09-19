@@ -17,7 +17,6 @@ const prop = defineProps<{
 .repo-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  justify-content: start;
   gap: 10px;
 }
 
