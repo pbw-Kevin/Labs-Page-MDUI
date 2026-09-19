@@ -4,7 +4,7 @@ import '@mdui/icons/link'
 import '@mdui/icons/keyboard-arrow-down'
 import '@mdui/icons/people'
 import '@mdui/icons/access-time'
-import { default as repos, emptyRepo } from '~/assets/repos'
+import { default as projects, emptyProject } from '~/assets/projects'
 import StatusChip from '~/components/StatusChip.vue'
 import TagChip from '~/components/TagChip.vue'
 
@@ -12,15 +12,15 @@ const props = defineProps<{
   id: string
 }>()
 
-const repo = computed(() => {
-  return repos.find((tmpRepo) => {
-    return tmpRepo.id === props.id
-  }) || emptyRepo
+const project = computed(() => {
+  return projects.find((tmpProject) => {
+    return tmpProject.id === props.id
+  }) || emptyProject
 })
 </script>
 
 <template>
-  <p class="repo-brief-intro">{{ repo.briefIntro }}</p>
+  <p class="project-brief-intro">{{ project.briefIntro }}</p>
   <mdui-list>
     <mdui-collapse accordion>
       <mdui-collapse-item>
@@ -32,32 +32,32 @@ const repo = computed(() => {
         <div class="info-collapse-content">
           <div>
             <mdui-chip class="unclickable-chip">
-              {{ repo.owner }}
+              {{ project.owner }}
               <mdui-icon-people slot="icon"></mdui-icon-people>
             </mdui-chip>
             <mdui-chip class="unclickable-chip">
-              {{ repo.version }}
+              {{ project.version }}
             </mdui-chip>
           </div>
           <div>
             <mdui-chip class="unclickable-chip">
-              创建于：{{ repo.createdAt }}
+              创建于：{{ project.createTime }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
             <mdui-chip class="unclickable-chip">
-              修改于：{{ repo.modifiedAt }}
+              修改于：{{ project.modifyTime }}
               <mdui-icon-access-time slot="icon"></mdui-icon-access-time>
             </mdui-chip>
           </div>
           <div>
-            <TagChip v-for="tag in repo.tags" :tag></TagChip>
+            <TagChip v-for="tag in project.tags" :tag></TagChip>
           </div>
           <div>
-            <StatusChip :status="repo.status"></StatusChip>
+            <StatusChip :status="project.status"></StatusChip>
           </div>
         </div>
       </mdui-collapse-item>
-      <p v-html="repo.intro.replaceAll('\n', '<br />')"></p>
+      <p v-html="project.intro.replaceAll('\n', '<br />')"></p>
       <mdui-collapse-item>
         <mdui-list-item slot="header" rounded>
           <mdui-icon-link slot="icon"></mdui-icon-link>
@@ -65,7 +65,7 @@ const repo = computed(() => {
           <mdui-icon-keyboard-arrow-down slot="end-icon"></mdui-icon-keyboard-arrow-down>
         </mdui-list-item>
         <div class="info-collapse-content">
-          <div v-for="link in repo.links">
+          <div v-for="link in project.links">
             <a :href="link.url" :target="link?.target">{{ link.name }}</a>
           </div>
         </div>
@@ -79,7 +79,7 @@ const repo = computed(() => {
   margin: 10px 40px;
 }
 
-p.repo-brief-intro {
+p.project-brief-intro {
   font-style: italic;
   color: rgb(var(--mdui-color-on-surface-variant));
 }

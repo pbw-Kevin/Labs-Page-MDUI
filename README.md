@@ -6,7 +6,7 @@ It generates static pages, which are suitable to be deployed on pure-static host
 ## Demo
 [AIR-Kevin 的实验室](https://labs.air-kevin.rf.gd)
 
-## Edit personal repos/projects
+## Edit personal projects
 Just edit file `app/assets/config.ts`.  
 Change files in folder `public` if necessary.
 

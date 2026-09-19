@@ -1,22 +1,22 @@
 <script lang="ts" setup>
 import config from '~/assets/config'
-import RepoDetail from '~/components/RepoDetail.vue'
-import repos from '~/assets/repos'
+import ProjectDetail from '~/components/ProjectDetail.vue'
+import projects from '~/assets/projects'
 
 const id = ref('')
 
-const existRepo = computed(() => {
-  return repos.find((tmpRepo) => {
-    return tmpRepo.id === id.value
+const existProject = computed(() => {
+  return projects.find((tmpProject) => {
+    return tmpProject.id === id.value
   })
 })
 
 onMounted(() => {
   const route = useRoute()
   const router = useRouter()
-  if (typeof route.query.id !== 'string') router.push('/')
+  if (typeof route.params.id !== 'string') router.push('/')
   else {
-    id.value = route.query.id;
+    id.value = route.params.id;
     useHead({
       title: `项目：${id.value}${config.titleDelimiter}${config.title}`
     })
@@ -26,7 +26,7 @@ onMounted(() => {
 
 <template>
   <h1>项目：{{ id }}</h1>
-  <RepoDetail :id v-if="existRepo"></RepoDetail>
+  <ProjectDetail :id v-if="existProject"></ProjectDetail>
   <p v-else>
     项目不存在<br />
     <NuxtLink to="/">返回首页</NuxtLink>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import config from '~/assets/config'
-import repos from '~/assets/repos'
-import RepoCardGroup from '~/components/RepoCardGroup.vue'
+import projects from '~/assets/projects'
+import ProjectCardGroup from '~/components/ProjectCardGroup.vue'
 
 useHead({
   title: config.title
@@ -10,5 +10,5 @@ useHead({
 
 <template>
   <h1>项目列表</h1>
-  <RepoCardGroup :repos></RepoCardGroup>
+  <ProjectCardGroup :projects></ProjectCardGroup>
 </template>

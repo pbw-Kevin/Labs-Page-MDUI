@@ -16,15 +16,15 @@ const config : Config = {
       href: "//blog.air-kevin.rf.gd"
     }
   ],
-  repos: [
+  projects: [
     {
       id: "JS-SiteTime",
       briefIntro: "基于 JavaScript 的网站运行时间显示插件",
       intro: "一款基于 JavaScript 的，用于在网页中实时显示网站运行时间的小插件。\n使用指南和更多信息参见链接。",
       owner: "AIR-Kevin",
       version: "Version 2.0",
-      createdAt: "2024-06-29 11:58:27",
-      modifiedAt: "2026-03-02 12:37:25",
+      createTime: "2024-06-29 11:58:27",
+      modifyTime: "2026-03-02 12:37:25",
       tags: [
         "JavaScript"
       ],
@@ -47,8 +47,8 @@ const config : Config = {
       intro: "<b>已废弃。</b>\n一款名叫“永乐大典”的手势游戏的在线版本。\n官网和更多信息参见链接。",
       owner: "AIR-Kevin",
       version: "Version 1.0-alpha.1",
-      createdAt: "2025-06-07",
-      modifiedAt: "2026-04-07",
+      createTime: "2025-06-07",
+      modifyTime: "2026-04-07",
       tags: [
         "游戏",
         "Vue",
@@ -74,8 +74,8 @@ const config : Config = {
       intro: "此工具可用于在受极域电子教室控制的机房中，对已上线的其它学生机执行命令。\n使用指南和更多信息参见链接。\n注意：此工具仅供学习和研究使用，请勿用于非法用途。\n受到了 <a href=\"https://github.com/ht0Ruial/Jiyu_udp_attack\" target=\"_blank\">ht0Ruial/Jiyu_udp_attack</a> 的启发。",
       owner: "AIR-Kevin",
       version: "Version 1.0",
-      createdAt: "2025-08-01",
-      modifiedAt: "2026-07-27",
+      createTime: "2025-08-01",
+      modifyTime: "2026-07-27",
       tags: [
         "极域电子教室",
         "C++",
@@ -96,8 +96,8 @@ const config : Config = {
       intro: "一款用于生成静态在线实验室页面的工具，使用 MDUI 和 Nuxt 编写。\n使用指南和更多信息参见链接。",
       owner: "AIR-Kevin",
       version: "v0.1.0",
-      createdAt: "2025-08-05",
-      modifiedAt: process.env.VITE_BUILD_DATE || '-',
+      createTime: "2025-08-05",
+      modifyTime: process.env.VITE_BUILD_DATE || '-',
       tags: [
         "MDUI",
         "Nuxt",
@@ -122,8 +122,8 @@ const config : Config = {
       intro: "<b>Single File FTP Deployer</b>\n一款用于通过 FTP 上传单个文件（如 feed 文件）的 Hexo 部署插件。\n使用指南和更多信息参见链接。\n注：未通过 NPM 发布。需要手动配置。",
       owner: "AIR-Kevin",
       version: "v1.0.0",
-      createdAt: "2026-02-09",
-      modifiedAt: "2026-03-28",
+      createTime: "2026-02-09",
+      modifyTime: "2026-03-28",
       tags: [
         "Hexo",
         "部署"
@@ -143,8 +143,8 @@ const config : Config = {
       intro: "另一个有趣的迷宫谜题，可在线游玩。\n游玩方式参见链接。",
       owner: "AIR-Kevin",
       version: "Version 1.0",
-      createdAt: "2026-02-26",
-      modifiedAt: "2026-02-26",
+      createTime: "2026-02-26",
+      modifyTime: "2026-02-26",
       tags: [
         "迷宫谜题",
         "游戏",

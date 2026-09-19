@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import type { Repo } from '~/assets/main'
+import type { Project } from '~/assets/main'
 import StatusChip from './StatusChip.vue'
 import TagChip from './TagChip.vue'
 
 const prop = defineProps<{
-  repo: Repo
+  project: Project
 }>()
 </script>
 
 <template>
-  <mdui-card class="repo-card">
-    <NuxtLink class="title card-title" :to="`/repos/${prop.repo.id}`">{{ prop.repo.id }}</NuxtLink>
-    <p class="card-brief-intro">{{ prop.repo.briefIntro }}</p>
+  <mdui-card class="project-card">
+    <NuxtLink class="title card-title" :to="`/projects/${prop.project.id}`">{{ prop.project.id }}</NuxtLink>
+    <p class="card-brief-intro">{{ prop.project.briefIntro }}</p>
     <div>
-      <TagChip v-for="tag in prop.repo.tags" :tag></TagChip>
+      <TagChip v-for="tag in prop.project.tags" :tag></TagChip>
     </div>
-    <StatusChip :status="prop.repo.status"></StatusChip>
+    <StatusChip :status="prop.project.status"></StatusChip>
   </mdui-card>
 </template>
 

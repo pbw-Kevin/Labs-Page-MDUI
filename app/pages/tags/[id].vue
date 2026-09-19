@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import config from '~/assets/config'
-import allRepos from '~/assets/repos'
-import RepoCardGroup from '~/components/RepoCardGroup.vue'
+import allProjects from '~/assets/projects'
+import ProjectCardGroup from '~/components/ProjectCardGroup.vue'
 
 const id = ref('')
 
-const repos = computed(() => {
-  return allRepos.filter((repo) => {
-    return repo.tags.includes(id.value)
+const projects = computed(() => {
+  return allProjects.filter((project) => {
+    return project.tags.includes(id.value)
   })
 })
 
@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <h1>标签：{{ id }}</h1>
-  <RepoCardGroup :repos v-if="repos.length > 0" />
+  <ProjectCardGroup :projects v-if="projects.length > 0" />
   <p v-else>
     标签不存在<br />
     <NuxtLink to="/tags">返回标签列表</NuxtLink>

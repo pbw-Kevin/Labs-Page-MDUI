@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { default as repos, repoTags } from './app/assets/repos'
+import { default as projects, projectTags } from './app/assets/projects'
 import config from './app/assets/config'
 
 export default defineNuxtConfig({
@@ -37,9 +37,9 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: repos
-        .map(repo => {return `/repos/${repo.id}`})
-        .concat(repoTags.map((tag) => {
+      routes: projects
+        .map(project => {return `/projects/${project.id}`})
+        .concat(projectTags.map((tag) => {
           return `/tags/${tag}`
         }))
     },

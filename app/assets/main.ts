@@ -81,14 +81,14 @@ export function autoToggleNavBar() {
   toggleNavBar.value = isUpMd.value
 }
 
-export type Repo = {
+export type Project = {
   id: string
   briefIntro: string
   intro: string
   owner: string
   version: string
-  createdAt: string
-  modifiedAt: string
+  createTime: string
+  modifyTime: string
   tags: string[]
   status: string
   links: {
@@ -108,7 +108,7 @@ export type Config = {
     text: string
     href: string
   }[]
-  repos: Repo[]
+  projects: Project[]
   about: string
   bottom: string
 }
