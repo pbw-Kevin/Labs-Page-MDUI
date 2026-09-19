@@ -19,8 +19,8 @@ const config : Config = {
   bgImage: {
     pc: "https://pic.rmb.bdstatic.com/bjh/f5468fc31f392eea864515e5fbfc8653.png",
     mobile: "https://pic.rmb.bdstatic.com/bjh/6bb2a7abc9524d1470111cbc776a3a8f.jpeg",
-    opacity: 0.3,
-    frontOpacity: 0.7,
+    opacity: 0.2,
+    frontOpacity: 0.8,
   },
   repos: [
     {
