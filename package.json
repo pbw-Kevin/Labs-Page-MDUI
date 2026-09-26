@@ -14,10 +14,9 @@
   "dependencies": {
     "@mdui/icons": "^1.0.4",
     "@nuxtjs/color-mode": "^4.0.1",
-    "@nuxtjs/robots": "^6.2.0",
-    "@nuxtjs/sitemap": "^8.5.0",
-    "@types/js-cookie": "^3.0.6",
-    "@types/node": "^26.4.0",
+    "@nuxtjs/robots": "^6.2.3",
+    "@nuxtjs/sitemap": "^8.5.1",
+    "@types/node": "^26.6.3",
     "nuxt": "^4.5.2"
   },
   "allowScripts": {
