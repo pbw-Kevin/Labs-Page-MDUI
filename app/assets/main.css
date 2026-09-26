@@ -43,6 +43,7 @@ body {
 mdui-layout {
   height: 100vh;
   width: 100vw;
+  overscroll-behavior-y: contain;
 }
 
 a {
