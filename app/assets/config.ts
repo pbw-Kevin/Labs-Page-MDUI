@@ -24,7 +24,7 @@ const config : Config = {
       owner: "AIR-Kevin",
       version: "Version 2.0",
       createdAt: "2024-06-29 11:58:27",
-      modifiedAt: "2026-03-02 12:37:25",
+      modifiedAt: "2026-10-01 20:36:50",
       tags: [
         "JavaScript"
       ],
@@ -119,7 +119,7 @@ const config : Config = {
     {
       id: "hexo-deployer-feedftp",
       briefIntro: "用于通过 FTP 上传单个文件（如 feed 文件）的 Hexo 部署插件",
-      intro: "<b>Single File FTP Deployer</b>\n一款用于通过 FTP 上传单个文件（如 feed 文件）的 Hexo 部署插件。\n使用指南和更多信息参见链接。\n注：未通过 NPM 发布。需要手动配置。",
+      intro: "<b>Single File FTP Deployer</b>\n一款用于通过 FTP 上传单个文件（如 feed 文件）的 Hexo 部署插件。\n使用指南和更多信息参见链接。\n注：未通过 npm 发布。需要手动配置。",
       owner: "AIR-Kevin",
       version: "v1.0.0",
       createdAt: "2026-02-09",
